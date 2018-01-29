@@ -3,6 +3,9 @@ namespace DungeonsandDragons
 {
     public class Monster:Character
     {
+
+        public Item SpecialItem;
+
         public Monster()
         {
             Name = "";
@@ -11,41 +14,31 @@ namespace DungeonsandDragons
             Speed = 1;
             MaxHealth = 10;
             Health = 10;
-            Level = 1;
+            Level = 0;
             Experience = 0;
             Defense = 1;
-            Items = null;
-            this.Items = new int[Global.MAXITEM];
+            SpecialItem = null;
         }
-
-        // Add experience points to the current monster
-        public void gainExperience(int experience)
+        // set the level for monster
+        // update the attribute values base on the level
+        public void setLevelTo(int level)
         {
-            this.Experience += experience;
+            this.Level = level;
+            updateAttributeValues();
         }
 
-        // Instead of having int as item, we will have an item as item
         // return false if bad location or location has been used
         // else equip the item and return true
-        public bool useItem(int item, int location)
+        public void setSpcialItem(Item item)
         {
-            if (location < 0 || location >= Global.MAXITEM || this.Items[location] != 0 /* location has been used*/)
-            {
-                return false;
-            }
-            else
-            {
-                Items[location] = item;
-                //also need to update the hero attributes (strength, defense...) before return
-                return true;
-            }
+            this.SpecialItem = item;   
         }
 
         // drop the item in specific location.
-        // Instead of return int, we will return an item
-        public int dropItem(int location)
+        public Item dropSpecialItem()
         {
-            return this.Items[location];
+            return this.SpecialItem;
         }
+
     }
 }

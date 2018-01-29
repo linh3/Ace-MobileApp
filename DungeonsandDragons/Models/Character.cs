@@ -1,97 +1,68 @@
 ﻿using System;
+using System.Data;
 using System.Collections.Generic;
 namespace DungeonsandDragons
-{     
+{
+
     public class Character
     {
-        protected string Name;
+        public string Name { set; get; }
         //The name is used to display the character to the user 
-        protected string ImageLink;
+        public string ImageLink { set; get; }
         //Use to display the image of this character to the user. 
-        protected int Strength;
+        public int Strength{set; get;}
         // Represents the attack ability of current character. 
-       // protected int TotalStrength;
-        protected int Speed;
+       // public int TotalStrength;
+        public int Speed { set; get; }
         // Represents how fast the character plays 
-        protected int MaxHealth;
+        public int MaxHealth { set; get; }
         // Represents the maximum heath 
 
-        protected int Health;
+        public int Health { set; get; }
         // Represents the current health 
 
-        protected int Level;
+        public int Level { set; get; }
         // Represents the current level 
-        protected int Experience;
+        public int Experience { set; get; }
         // Represents the current experience points 
-        protected int Defense;
+        public int Defense { set; get; }
         // Represents the character’s ability to defend itself from attack
-
-        protected int [] Items; 
-        // Instead of having a list of int, we will have an list of item
-        // contains all items for the character 
+ 
         public Character()
         {
             Name = "";
             ImageLink = "";
             Strength = 0;
-            //TotalStrength = 0;
             Speed = 0;
             MaxHealth = 0;
             Health = 0;
             Level = 0;
             Experience = 0;
             Defense = 0;
-            Items = null;
         }
 
-        public void setName(string name) => this.Name = name;
 
-        public string getName() => this.Name;
+        // Generate the attack number from this character
+        public int attack() => this.Strength;
 
-        public void setImageLink(string link) => this.ImageLink = link;
+        // Generate the defense number from this character
+        public int defense() => this.Defense;
 
-        public string getImageLink() => this.ImageLink;
+        // Calculate the health precentage for display purpose
+        public float healthPercentage()
+        {
+            return (float)this.Health / (float)this.MaxHealth;
+        }
 
-        public void setStrength(int strength) => this.Strength = strength;
-
-        public int getStrength() => this.Strength;
-
-        public void setSpeed(int speed) => this.Speed = speed;
-
-        public int getSpeed() => this.Speed;
-
-        public void setMaxHealth(int maxhealth) => this.MaxHealth = maxhealth;
-
-        public int getMaxHealth() => this.MaxHealth;
-
-        public void setHealth(int health) => this.Health = health;
-
-        public int getHealth() => this.Health;
-
-        public void setLevel(int level) => this.Level = level;
-
-        public int getLevel() => this.Level;
-
-        public void setExperience(int experience) => this.Experience = experience;
-
-        public int getExperience() => this.Experience;
-
-        public void setDefense(int defense) => this.Defense = defense;
-
-        public int getDefense() => this.Defense;
-
-        public int Attack() => this.Strength;
-        // Generate the attack number from this hero
-
-
-        public void Takedamage(int damage)
+        // Subtract the current health with the damage
+        public void takeDamage(int damage)
         {
             this.Health -= damage;
         }
-        // Subtract the current health with the damage
 
-
-        public bool checkDead()
+        // Check if the character is dead or not
+        // return true when dead, false when alive
+        public bool isDead()
         {
             if(this.Health <= 0){
                 return true;
@@ -99,8 +70,14 @@ namespace DungeonsandDragons
                 return false;
             }
         }
-        // Return true if the Role is dead, else return false
 
+        // update the attribute Values with the AttributeChart with current level
+        public void updateAttributeValues()
+        {
+            this.Strength = LevelAttributeChart.table[this.Level].Attack;
+            this.Defense = LevelAttributeChart.table[this.Level].Defense;
+            this.Speed = LevelAttributeChart.table[this.Level].Speed;
+        }
 
     }
 }

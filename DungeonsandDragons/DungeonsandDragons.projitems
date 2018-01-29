@@ -34,7 +34,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Models\Character.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\Global.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\HelperClasses.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Hero.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Monster.cs" />
   </ItemGroup>

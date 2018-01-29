@@ -36,6 +36,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\Character.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Global.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Hero.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Monster.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AboutPage.xaml" />

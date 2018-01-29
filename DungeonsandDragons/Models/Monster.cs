@@ -3,8 +3,8 @@ namespace DungeonsandDragons
 {
     public class Monster:Character
     {
-
-        public Item SpecialItem;
+        // contain the special item for monster to drop
+        public Item SpecialItem { set; get; }
 
         public Monster()
         {
@@ -27,14 +27,15 @@ namespace DungeonsandDragons
             updateAttributeValues();
         }
 
-        // return false if bad location or location has been used
-        // else equip the item and return true
+        // set the item to monster for special drop
+        // will also update the attribute value when Item class is created
         public void setSpcialItem(Item item)
         {
             this.SpecialItem = item;   
         }
 
-        // drop the item in specific location.
+        // drop the special item from monster.
+        // will also update the attribute value when Item class is created
         public Item dropSpecialItem()
         {
             return this.SpecialItem;

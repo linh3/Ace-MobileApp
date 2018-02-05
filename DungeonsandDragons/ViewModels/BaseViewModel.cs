@@ -9,6 +9,15 @@ namespace DungeonsandDragons
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
+
+       // public Hero[] Heros = new Hero[5];
+       // public Monster[] Monsters = new Monster[5];
+
+
+
+
+
+
         public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>() ?? new MockDataStore();
 
         bool isBusy = false;

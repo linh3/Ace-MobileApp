@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DungeonsandDragons.BattlePage" Title="{Binding Title}" x:Name="BattlePage">
+    <ContentPage.Content>
+        <StackLayout>
+           <Button Margin="0,10,0,0" Text="Exit Battle" Clicked = "Exit_Clicked" BackgroundColor="{StaticResource Primary}" TextColor="White" />
+            </StackLayout>
+        </ContentPage.Content>
+        </ContentPage>

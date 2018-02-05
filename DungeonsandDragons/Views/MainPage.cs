@@ -8,7 +8,7 @@ namespace DungeonsandDragons
     {
         public MainPage()
         {
-            Page itemsPage, aboutPage = null;
+            Page itemsPage, aboutPage, gamePage= null;
 
             switch (Device.RuntimePlatform)
             {
@@ -22,8 +22,13 @@ namespace DungeonsandDragons
                     {
                         Title = "About"
                     };
+                    gamePage = new NavigationPage(new GamePage())
+                    {
+                        Title = "Game"
+                    };
                     itemsPage.Icon = "tab_feed.png";
                     aboutPage.Icon = "tab_about.png";
+                    gamePage.Icon = "tab_about.png";
                     break;
                 default:
                     itemsPage = new ItemsPage()
@@ -35,11 +40,16 @@ namespace DungeonsandDragons
                     {
                         Title = "About"
                     };
+                    gamePage = new GamePage()
+                    {
+                        Title = "Game"
+                    };
                     break;
             }
 
             Children.Add(itemsPage);
             Children.Add(aboutPage);
+            Children.Add(gamePage);
 
             Title = Children[0].Title;
         }

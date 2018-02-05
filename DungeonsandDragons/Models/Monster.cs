@@ -24,7 +24,7 @@ namespace DungeonsandDragons
         public void setLevelTo(int level)
         {
             this.Level = level;
-            updateAttributeValues();
+            updateCharacterAttributeValues();
         }
 
         // set the item to monster for special drop
@@ -39,6 +39,21 @@ namespace DungeonsandDragons
         public Item dropSpecialItem()
         {
             return this.SpecialItem;
+        }
+
+        public void updateTotalAttributeValues()
+        {
+            this.TotalSpeed = this.Speed;
+            this.TotalDefense = this.Defense;
+            this.TotalStength = this.Strength;
+            if (SpecialItem != null)
+            {
+                this.TotalSpeed += SpecialItem.Speed;
+                this.TotalDefense += SpecialItem.Defense;
+                this.TotalStength += SpecialItem.Strength;
+            }
+        
+
         }
 
     }

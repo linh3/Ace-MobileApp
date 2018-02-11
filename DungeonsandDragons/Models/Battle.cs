@@ -1,21 +1,23 @@
 ﻿using System;
+using System.Collections.Generic;
 namespace DungeonsandDragons
 {
     public class Battle
     {
-        public Hero[] Heroes = new Hero[5]; // Holds list of the 6 heroes
-        public Monster[] Monsters = new Monster[5]; // Holds list of the 6 monsters
-        public Item[] Items = new Item[10]; // Holds list of items
-        public Item[] DroppedItems = new Item[10]; // keeps a track of dropped items
-        public Monster[] deadMonsters = new Monster[5]; // keeps a track of dead monsters
+        public Hero[] Heroes { set; get; } // Holds list of the 6 heroes
+        public Monster[] Monsters { set; get; } // Holds list of the 6 monsters
+        public List<Item> AllItems { set; get; } // Holds list of items
+        public List<Item> DroppedItems { set; get; } // keeps a track of dropped items
+        public int round { set; get; }
 
         public Battle()
         {
+            round = 0;
             this.Heroes = new Hero[5];
             this.Monsters = new Monster[5];
-            this.Items = new Item[10];
-            this.DroppedItems = null;
-            this.deadMonsters = null;
+            this.DroppedItems = new List<Item>();
+            this.AllItems = new List<Item>();
+
         }
 
         //Initialize the which party will attack first base on highest speed
@@ -26,6 +28,38 @@ namespace DungeonsandDragons
             return true;
         }
 
+
+        // Checking if all the moonsters are dead
+        // return true if all the monsters are dead
+        // return false if not
+        public bool isAllMonstersDead()
+        {
+            bool AllDead = true;
+            foreach (Monster monster in Monsters)
+            {
+                if (monster.isAlive)
+                {
+                    AllDead = false;
+                }
+            }
+            return AllDead;
+        }
+
+        // Checking if all the heroes are dead
+        // return true if all the heroes are dead
+        // return fasle if not
+        public bool isAllHeoresDead()
+        {
+            bool AllDead = true;
+            foreach (Hero hero in Heroes)
+            {
+                if (hero.isAlive)
+                {
+                    AllDead = false;
+                }
+            }
+            return AllDead;
+        }
 
         //Determine which party will attack, and do the attack
         //Return 0: no party has die
@@ -52,10 +86,10 @@ namespace DungeonsandDragons
             return true;
         }
 
-        //returns true if all monsters are dead and battle reaches next level
-        public bool nextLevel(Monster[] deadMonsters)
+        // nextRound function will assign new monster with new special Items in Monseters array
+        public void nextRound()
         {
-            return true;
+            round++;
         }
 
         //returns true if all heroes are dead

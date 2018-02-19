@@ -33,12 +33,12 @@ namespace DungeonsandDragons{
         {
             var mockItems = new List<Item>
             {
-                new Item { Id = Guid.NewGuid().ToString(), Name = "First item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Name = "Second item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Name = "Third item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Name = "Fourth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Name = "Fifth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Name = "Sixth item", Description="This is an item description." },
+                new Item { Id = Guid.NewGuid().ToString(), Name = "First item", Description="This is 1 item description." },
+                new Item { Id = Guid.NewGuid().ToString(), Name = "Second item", Description="This is 2 item description." },
+                new Item { Id = Guid.NewGuid().ToString(), Name = "Third item", Description="This is 3 item description." },
+                new Item { Id = Guid.NewGuid().ToString(), Name = "Fourth item", Description="This is 4 item description." },
+                new Item { Id = Guid.NewGuid().ToString(), Name = "Fifth item", Description="This is 5 item description." },
+                new Item { Id = Guid.NewGuid().ToString(), Name = "Sixth item", Description="This is 6 item description." },
             };
 
             foreach (var data in mockItems)

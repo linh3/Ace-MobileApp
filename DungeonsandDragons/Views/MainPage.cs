@@ -8,14 +8,18 @@ namespace DungeonsandDragons
     {
         public MainPage()
         {
-            Page itemsPage, aboutPage, gamePage= null;
+            Page monstersPage, itemsPage, aboutPage, gamePage= null;
 
             switch (Device.RuntimePlatform)
             {
                 case Device.iOS:
+                    monstersPage = new NavigationPage(new MonstersPage())
+                    {
+                        Title = "Monsters"
+                    };
                     itemsPage = new NavigationPage(new ItemsPage())
                     {
-                        Title = "Browse"
+                        Title = "Items"
                     };
 
                     aboutPage = new NavigationPage(new AboutPage())
@@ -26,14 +30,19 @@ namespace DungeonsandDragons
                     {
                         Title = "Game"
                     };
+                    monstersPage.Icon = "tab_feed.png";
                     itemsPage.Icon = "tab_feed.png";
                     aboutPage.Icon = "tab_about.png";
                     gamePage.Icon = "tab_about.png";
                     break;
                 default:
+                    monstersPage = new MonstersPage()
+                    {
+                        Title = "Monsters"
+                    };
                     itemsPage = new ItemsPage()
                     {
-                        Title = "Browse"
+                        Title = "Items"
                     };
 
                     aboutPage = new AboutPage()
@@ -47,6 +56,7 @@ namespace DungeonsandDragons
                     break;
             }
 
+            Children.Add(monstersPage);
             Children.Add(itemsPage);
             Children.Add(aboutPage);
             Children.Add(gamePage);

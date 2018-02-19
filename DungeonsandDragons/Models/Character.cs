@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Data;
 using System.Collections.Generic;
-namespace DungeonsandDragons
+using SQLite;
+namespace DungeonsandDragons.Models
 {
 
     public class Character
     {
+        [PrimaryKey]
+        public string Id { set; get; }
         public string Name { set; get; }
         //The name is used to display the character to the user 
         public string ImageLink { set; get; }
@@ -87,6 +90,7 @@ namespace DungeonsandDragons
             this.Health = newMaxHealth - (this.MaxHealth - this.Health);
             this.MaxHealth = newMaxHealth;
         }
+
 
     }
 }

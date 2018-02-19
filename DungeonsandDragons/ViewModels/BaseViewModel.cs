@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-
+using DungeonsandDragons.Models;
 using Xamarin.Forms;
 
-namespace DungeonsandDragons
+namespace DungeonsandDragons.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
 
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>() ?? new MockDataStore();
+        public IDataStore DataStore => DependencyService.Get<IDataStore>() ??  MockDataStore.Instance;
 
         bool isBusy = false;
         public bool IsBusy

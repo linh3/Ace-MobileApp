@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace DungeonsandDragons
+namespace DungeonsandDragons.ViewModels
 {
     public class BattleViewModel: BaseViewModel
     {

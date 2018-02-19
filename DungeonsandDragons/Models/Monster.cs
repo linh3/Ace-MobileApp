@@ -1,5 +1,5 @@
 ﻿using System;
-namespace DungeonsandDragons
+namespace DungeonsandDragons.Models
 {
     public class Monster:Character
     {
@@ -54,6 +54,12 @@ namespace DungeonsandDragons
             }
         
 
+        }
+
+        public void Update(Monster data)
+        {
+            Name = data.Name;
+            ImageLink = data.ImageLink;
         }
 
     }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using DungeonsandDragons.Models;
 namespace DungeonsandDragons
 {
     public class Battle

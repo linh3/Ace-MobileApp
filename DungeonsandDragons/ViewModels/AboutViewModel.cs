@@ -3,7 +3,7 @@ using System.Windows.Input;
 
 using Xamarin.Forms;
 
-namespace DungeonsandDragons
+namespace DungeonsandDragons.ViewModels
 {
     public class AboutViewModel : BaseViewModel
     {

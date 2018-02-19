@@ -1,13 +1,14 @@
 ﻿using System;
+using SQLite;
 
-namespace DungeonsandDragons
+namespace DungeonsandDragons.Models
 {
     public class Item
     {
+        [PrimaryKey]
         public string Id { get; set; } // for removing error in MockDataStore
-        public string Text { get; set; }// for removing error in MockDataStore
-        public String Description { get; set;}// for removing error in MockDataStore
 
+        public string Description { get; set; }
         //The name is used to display the item to the user
         public string Name { get; set; }
         //The ImageLink is used to display the item image to the user
@@ -29,6 +30,20 @@ namespace DungeonsandDragons
             Strength = 0;
             Defense = 0;
             Speed = 0;
+            Description = "";
+        }
+
+        public void Update (Item newItem)
+        {
+            if (newItem== null)
+            {
+                return;
+            }
+
+            this.Name = newItem.Name;
+            this.Description = newItem.Description;
+
+            return;
         }
     }
 

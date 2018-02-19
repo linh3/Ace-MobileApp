@@ -1,5 +1,5 @@
 ﻿using System;
-namespace DungeonsandDragons
+namespace DungeonsandDragons.Models
 {
     public class Hero:Character
     {
@@ -100,5 +100,12 @@ namespace DungeonsandDragons
         {
             this.Health = this.MaxHealth;   
         }
+
+        public void Update(Hero data)
+        {
+            Name = data.Name;
+            ImageLink = data.ImageLink;
+        }
+
     }
 }

@@ -1,5 +1,5 @@
 ﻿using System;
-namespace DungeonsandDragons
+namespace DungeonsandDragons.Models
 {
     // Represent the item location
     public enum ItemLocation

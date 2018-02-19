@@ -1,5 +1,5 @@
 ﻿using System;
-namespace DungeonsandDragons
+namespace DungeonsandDragons.ViewModels
 {
     public class GameViewModel: BaseViewModel
     {

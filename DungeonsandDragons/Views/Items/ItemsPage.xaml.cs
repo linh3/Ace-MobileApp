@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+using DungeonsandDragons.Models;
+using DungeonsandDragons.ViewModels;
 
 namespace DungeonsandDragons
 {
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ItemsPage : ContentPage
     {
         ItemsViewModel viewModel;
@@ -14,7 +18,7 @@ namespace DungeonsandDragons
         {
             InitializeComponent();
 
-            BindingContext = viewModel = new ItemsViewModel();
+            BindingContext = viewModel = ItemsViewModel.Instance;
         }
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
@@ -34,12 +38,29 @@ namespace DungeonsandDragons
             await Navigation.PushAsync(new NewItemPage());
         }
 
+
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            BindingContext = null;
+            if(ToolbarItems.Count > 0)
+            {
+                ToolbarItems.RemoveAt(0);
+            }
 
-            if (viewModel.Items.Count == 0)
-                viewModel.LoadItemsCommand.Execute(null);
+            InitializeComponent();
+            if(viewModel.Dataset.Count == 0)
+            {
+                viewModel.LoadDataCommand.Execute(null);
+            }
+            else if(viewModel.NeedsRefresh())
+            {
+                viewModel.LoadDataCommand.Execute((null));
+            }
+
+            BindingContext = viewModel;
+
         }
     }
 }

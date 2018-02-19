@@ -2,64 +2,255 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Character = DungeonsandDragons.Models.Character;
+using DungeonsandDragons.Models;
 
-namespace DungeonsandDragons
-{
-    public class MockDataStore : IDataStore<Item>
+namespace DungeonsandDragons{
+    public sealed class MockDataStore : IDataStore
     {
-        List<Item> items;
 
-        public MockDataStore()
+        // Make this a singleton so it only dexist one time because holds all the data records in memory
+        private static MockDataStore _instance;
+
+        public static MockDataStore Instance
         {
-            items = new List<Item>();
-            var mockItems = new List<Item>
+            get
             {
-                new Item { Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Second item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Third item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fourth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fifth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Sixth item", Description="This is an item description." },
-            };
-
-            foreach (var item in mockItems)
-            {
-                items.Add(item);
+                if (_instance == null)
+                {
+                    _instance = new MockDataStore();
+                }
+                return _instance;
             }
         }
 
-        public async Task<bool> AddItemAsync(Item item)
+        private List<Item> _itemDataset = new List<Item>();
+        private List<Hero> _heroDataset = new List<Hero>();
+        private List<Monster> _monsterDataset = new List<Monster>();
+     //   private List<Score> _scoreDataset = new List<Score>();
+
+        public MockDataStore()
         {
-            items.Add(item);
+            var mockItems = new List<Item>
+            {
+                new Item { Id = Guid.NewGuid().ToString(), Name = "First item", Description="This is an item description." },
+                new Item { Id = Guid.NewGuid().ToString(), Name = "Second item", Description="This is an item description." },
+                new Item { Id = Guid.NewGuid().ToString(), Name = "Third item", Description="This is an item description." },
+                new Item { Id = Guid.NewGuid().ToString(), Name = "Fourth item", Description="This is an item description." },
+                new Item { Id = Guid.NewGuid().ToString(), Name = "Fifth item", Description="This is an item description." },
+                new Item { Id = Guid.NewGuid().ToString(), Name = "Sixth item", Description="This is an item description." },
+            };
+
+            foreach (var data in mockItems)
+            {
+                _itemDataset.Add(data);
+            }
+
+            var mockHeroes = new List<Hero>
+            {
+                new Hero { Id = Guid.NewGuid().ToString(), Name = "First Hero", ImageLink="This is an Character description.", Level = 1 },
+                new Hero { Id = Guid.NewGuid().ToString(), Name = "Second Hero", ImageLink="This is an Character description." , Level = 1},
+                new Hero { Id = Guid.NewGuid().ToString(), Name = "Third Hero", ImageLink="This is an Character description." , Level = 2},
+                new Hero { Id = Guid.NewGuid().ToString(), Name = "Fourth Hero", ImageLink="This is an Character description." , Level = 2},
+                new Hero { Id = Guid.NewGuid().ToString(), Name = "Fifth Hero", ImageLink="This is an Character description." , Level = 3},
+                new Hero { Id = Guid.NewGuid().ToString(), Name = "Sixth Hero", ImageLink="This is an Character description." , Level = 3},
+            };
+
+            foreach (var data in mockHeroes)
+            {
+                _heroDataset.Add(data);
+            }
+
+            var mockMonsters = new List<Monster>
+            {
+                new Monster { Id = Guid.NewGuid().ToString(), Name = "First Monster", ImageLink="This is an Monster description." },
+                new Monster { Id = Guid.NewGuid().ToString(), Name = "Second Monster", ImageLink="This is an Monster description." },
+                new Monster { Id = Guid.NewGuid().ToString(), Name = "Third Monster", ImageLink="This is an Monster description." },
+                new Monster { Id = Guid.NewGuid().ToString(), Name = "Fourth Monster", ImageLink="This is an Monster description." },
+                new Monster { Id = Guid.NewGuid().ToString(), Name = "Fifth Monster", ImageLink="This is an Monster description." },
+                new Monster { Id = Guid.NewGuid().ToString(), Name = "Sixth Monster", ImageLink="This is an Monster description." },
+            };
+
+            foreach (var data in mockMonsters)
+            {
+                _monsterDataset.Add(data);
+            }
+            /*
+            var mockScores = new List<Score>
+            {
+                new Score { Id = Guid.NewGuid().ToString(), Name = "First Score", ScoreTotal = 111},
+                new Score { Id = Guid.NewGuid().ToString(), Name = "Second Score", ScoreTotal = 222},
+                new Score { Id = Guid.NewGuid().ToString(), Name = "Third Score", ScoreTotal = 333},
+                new Score { Id = Guid.NewGuid().ToString(), Name = "Fourth Score", ScoreTotal = 444},
+                new Score { Id = Guid.NewGuid().ToString(), Name = "Fifth Score", ScoreTotal = 555},
+                new Score { Id = Guid.NewGuid().ToString(), Name = "Sixth Score", ScoreTotal = 666},
+            };
+
+            foreach (var data in mockScores)
+            {
+                _scoreDataset.Add(data);
+            }
+            */
+        }
+
+        // Item
+        public async Task<bool> AddAsync_Item(Item data)
+        {
+            _itemDataset.Add(data);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> UpdateItemAsync(Item item)
+        public async Task<bool> UpdateAsync_Item(Item data)
         {
-            var _item = items.Where((Item arg) => arg.Id == item.Id).FirstOrDefault();
-            items.Remove(_item);
-            items.Add(item);
+            var myData = _itemDataset.FirstOrDefault(arg => arg.Id == data.Id);
+            if (myData == null)
+            {
+                return false;
+            }
+
+            myData.Update(data);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> DeleteItemAsync(string id)
+        public async Task<bool> DeleteAsync_Item(Item data)
         {
-            var _item = items.Where((Item arg) => arg.Id == id).FirstOrDefault();
-            items.Remove(_item);
+            var myData = _itemDataset.FirstOrDefault(arg => arg.Id == data.Id);
+            _itemDataset.Remove(myData);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<Item> GetItemAsync(string id)
+        public async Task<Item> GetAsync_Item(string id)
         {
-            return await Task.FromResult(items.FirstOrDefault(s => s.Id == id));
+            return await Task.FromResult(_itemDataset.FirstOrDefault(s => s.Id == id));
         }
 
-        public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<IEnumerable<Item>> GetAllAsync_Item(bool forceRefresh = false)
         {
-            return await Task.FromResult(items);
+            return await Task.FromResult(_itemDataset);
         }
+
+
+        // Hero
+        public async Task<bool> AddAsync_Hero(Hero data)
+        {
+            _heroDataset.Add(data);
+
+            return await Task.FromResult(true);
+        }
+
+        public async Task<bool> UpdateAsync_Hero(Hero data)
+        {
+            var myData = _heroDataset.FirstOrDefault(arg => arg.Id == data.Id);
+            if (myData == null)
+            {
+                return false;
+            }
+
+            myData.Update(data);
+
+            return await Task.FromResult(true);
+        }
+
+        public async Task<bool> DeleteAsync_Hero(Hero data)
+        {
+            var myData = _heroDataset.FirstOrDefault(arg => arg.Id == data.Id);
+            _heroDataset.Remove(myData);
+
+            return await Task.FromResult(true);
+        }
+
+        public async Task<Hero> GetAsync_Hero(string id)
+        {
+            return await Task.FromResult(_heroDataset.FirstOrDefault(s => s.Id == id));
+        }
+
+        public async Task<IEnumerable<Hero>> GetAllAsync_Hero(bool forceRefresh = false)
+        {
+            return await Task.FromResult(_heroDataset);
+        }
+
+
+        //Monster
+        public async Task<bool> AddAsync_Monster(Monster data)
+        {
+            _monsterDataset.Add(data);
+
+            return await Task.FromResult(true);
+        }
+
+        public async Task<bool> UpdateAsync_Monster(Monster data)
+        {
+            var myData = _monsterDataset.FirstOrDefault(arg => arg.Id == data.Id);
+            if (myData == null)
+            {
+                return false;
+            }
+
+            myData.Update(data);
+
+            return await Task.FromResult(true);
+        }
+
+        public async Task<bool> DeleteAsync_Monster(Monster data)
+        {
+            var myData = _monsterDataset.FirstOrDefault(arg => arg.Id == data.Id);
+            _monsterDataset.Remove(myData);
+
+            return await Task.FromResult(true);
+        }
+
+        public async Task<Monster> GetAsync_Monster(string id)
+        {
+            return await Task.FromResult(_monsterDataset.FirstOrDefault(s => s.Id == id));
+        }
+
+        public async Task<IEnumerable<Monster>> GetAllAsync_Monster(bool forceRefresh = false)
+        {
+            return await Task.FromResult(_monsterDataset);
+        }
+
+        /*
+        // Score
+        public async Task<bool> AddAsync_Score(Score data)
+        {
+            _scoreDataset.Add(data);
+
+            return await Task.FromResult(true);
+        }
+
+        public async Task<bool> UpdateAsync_Score(Score data)
+        {
+            var myData = _scoreDataset.FirstOrDefault(arg => arg.Id == data.Id);
+            if (myData == null)
+            {
+                return false;
+            }
+
+            myData.Update(data);
+
+            return await Task.FromResult(true);
+        }
+
+        public async Task<bool> DeleteAsync_Score(Score data)
+        {
+            var myData = _scoreDataset.FirstOrDefault(arg => arg.Id == data.Id);
+            _scoreDataset.Remove(myData);
+
+            return await Task.FromResult(true);
+        }
+
+        public async Task<Score> GetAsync_Score(string id)
+        {
+            return await Task.FromResult(_scoreDataset.FirstOrDefault(s => s.Id == id));
+        }
+
+        public async Task<IEnumerable<Score>> GetAllAsync_Score(bool forceRefresh = false)
+        {
+            return await Task.FromResult(_scoreDataset);
+        }
+        */
     }
 }

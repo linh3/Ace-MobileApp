@@ -1,7 +1,7 @@
 ﻿using System;
 
 using Xamarin.Forms;
-
+using DungeonsandDragons.Models;
 namespace DungeonsandDragons
 {
     public partial class NewItemPage : ContentPage
@@ -14,7 +14,7 @@ namespace DungeonsandDragons
 
             Item = new Item
             {
-                Text = "Item name",
+                Name = "Item name",
                 Description = "This is an item description."
             };
 
@@ -23,8 +23,14 @@ namespace DungeonsandDragons
 
         async void Save_Clicked(object sender, EventArgs e)
         {
-            MessagingCenter.Send(this, "AddItem", Item);
-            await Navigation.PopToRootAsync();
+            MessagingCenter.Send(this, "AddData", Item);
+            await Navigation.PopAsync();
+        }
+
+
+        async void Cancel_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
         }
     }
 }

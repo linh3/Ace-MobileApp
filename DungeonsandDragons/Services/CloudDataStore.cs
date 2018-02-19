@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-
+using DungeonsandDragons.Models;
 using Newtonsoft.Json;
 using Plugin.Connectivity;
 
@@ -79,5 +79,6 @@ namespace DungeonsandDragons
 
             return response.IsSuccessStatusCode;
         }
+
     }
 }

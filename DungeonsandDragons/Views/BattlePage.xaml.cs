@@ -7,6 +7,7 @@ namespace DungeonsandDragons
 {
     public partial class BattlePage : ContentPage
     {
+        //test
         public BattlePage()
         {
             InitializeComponent();

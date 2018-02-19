@@ -2,31 +2,63 @@
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
-
+using System.Linq;
+using DungeonsandDragons.Models;
 using Xamarin.Forms;
 
-namespace DungeonsandDragons
+namespace DungeonsandDragons.ViewModels
 {
     public class ItemsViewModel : BaseViewModel
     {
-        public ObservableCollection<Item> Items { get; set; }
-        public Command LoadItemsCommand { get; set; }
+        public ObservableCollection<Item> Dataset { get; set; }
+        public Command LoadDataCommand { get; set; }
+        private bool needsRefresh;
+        private static ItemsViewModel _instance;
+
+        public static ItemsViewModel Instance
+        {
+            get
+            {
+                if(_instance == null)
+                {
+                    _instance = new ItemsViewModel();
+                }
+                return _instance;
+            }
+        }
 
         public ItemsViewModel()
         {
-            Title = "Browse";
-            Items = new ObservableCollection<Item>();
-            LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
+            Title = "Item List";
+            Dataset = new ObservableCollection<Item>();
+            LoadDataCommand = new Command(async () => await ExecuteLoadDataCommand());
 
-            MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
+            MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddData", async (obj, data) =>
             {
-                var _item = item as Item;
-                Items.Add(_item);
-                await DataStore.AddItemAsync(_item);
+                Dataset.Add(data);
+                //await DataStore.AddItemAsync(_item);
+                await DataStore.AddAsync_Item(data);
             });
+
+            MessagingCenter.Subscribe<EditItemPage, Item>(this, "EditData", async (obj, data) => {
+                // Find the Item, then update it      
+                var myData = Dataset.FirstOrDefault(arg => arg.Id == data.Id);              
+                if (myData == null)              
+                {                    
+                    return;             
+                }              
+                myData.Update(data);
+                //await DataStore.UpdateItemAsync(_item);
+                await DataStore.UpdateAsync_Item(myData);
+                needsRefresh = true;
+            });
+
+            MessagingCenter.Subscribe<DeleteItemPage, Item>(this, "DeleteData", async (obj, data) =>             {                 Dataset.Remove(data);                 //await DataStore.DeleteAsync_Item(data);
+                await DataStore.DeleteAsync_Item(data);
+                needsRefresh = true;             }); 
         }
 
-        async Task ExecuteLoadItemsCommand()
+        async Task ExecuteLoadDataCommand()
         {
             if (IsBusy)
                 return;
@@ -35,11 +67,11 @@ namespace DungeonsandDragons
 
             try
             {
-                Items.Clear();
-                var items = await DataStore.GetItemsAsync(true);
-                foreach (var item in items)
+                Dataset.Clear();
+                var dataset = await DataStore.GetAllAsync_Item(true);
+                foreach (var data in dataset)
                 {
-                    Items.Add(item);
+                    Dataset.Add(data);
                 }
             }
             catch (Exception ex)
@@ -50,6 +82,16 @@ namespace DungeonsandDragons
             {
                 IsBusy = false;
             }
+        }
+
+        public bool NeedsRefresh()
+        {
+            if (needsRefresh)
+            {
+                needsRefresh = false;
+                return true;
+            }
+            return false;
         }
     }
 }

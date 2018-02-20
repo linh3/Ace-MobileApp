@@ -8,13 +8,12 @@ namespace DungeonsandDragons
     {
         public MainPage()
         {
-            Page monstersPage, itemsPage, aboutPage, gamePage= null;
-            Page heroPage = null;
+            Page monstersPage, itemsPage, aboutPage, gamePage,heroesPage, scoresPage = null;
 
             switch (Device.RuntimePlatform)
             {
                 case Device.iOS:
-                    heroPage = new NavigationPage(new HeroesPage())
+                    heroesPage = new NavigationPage(new HeroesPage())
                     {
                         Title = "Heroes"
                     };
@@ -26,6 +25,10 @@ namespace DungeonsandDragons
                     {
                         Title = "Items"
                     };
+                    scoresPage = new NavigationPage(new ScorePage())
+                    {
+                        Title = "Scores"
+                    };
 
                     aboutPage = new NavigationPage(new AboutPage())
                     {
@@ -35,13 +38,15 @@ namespace DungeonsandDragons
                     {
                         Title = "Game"
                     };
+                    heroesPage.Icon = "tab_feed.png";
+                    scoresPage.Icon = "tab_feed.png";
                     monstersPage.Icon = "tab_feed.png";
                     itemsPage.Icon = "tab_feed.png";
                     aboutPage.Icon = "tab_about.png";
                     gamePage.Icon = "tab_about.png";
                     break;
                 default:
-                    heroPage = new HeroesPage()
+                    heroesPage = new HeroesPage()
                     {
                         Title = "Heroes"
                     };
@@ -52,6 +57,10 @@ namespace DungeonsandDragons
                     itemsPage = new ItemsPage()
                     {
                         Title = "Items"
+                    };
+                    scoresPage= new ScorePage()
+                    {
+                        Title = "Scores"
                     };
 
                     aboutPage = new AboutPage()
@@ -65,9 +74,10 @@ namespace DungeonsandDragons
                     break;
             }
 
-            Children.Add(heroPage);
+            Children.Add(heroesPage);
             Children.Add(monstersPage);
             Children.Add(itemsPage);
+            Children.Add(scoresPage);
             Children.Add(aboutPage);
             Children.Add(gamePage);
 

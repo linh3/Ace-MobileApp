@@ -33,11 +33,11 @@ namespace DungeonsandDragons
         Task<Monster> GetAsync_Monster(string id);
         Task<IEnumerable<Monster>> GetAllAsync_Monster(bool forceRefresh = false);
 
-    /*    Task<bool> AddAsync_Score(Score data);
+        Task<bool> AddAsync_Score(Score data);
         Task<bool> UpdateAsync_Score(Score data);
         Task<bool> DeleteAsync_Score(Score data);
         Task<Score> GetAsync_Score(string id);
         Task<IEnumerable<Score>> GetAllAsync_Score(bool forceRefresh = false);
-*/
+
     }
 }

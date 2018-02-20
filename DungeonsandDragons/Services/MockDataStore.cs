@@ -27,7 +27,7 @@ namespace DungeonsandDragons{
         private List<Item> _itemDataset = new List<Item>();
         private List<Hero> _heroDataset = new List<Hero>();
         private List<Monster> _monsterDataset = new List<Monster>();
-     //   private List<Score> _scoreDataset = new List<Score>();
+        private List<Score> _scoreDataset = new List<Score>();
 
         public MockDataStore()
         {
@@ -75,7 +75,7 @@ namespace DungeonsandDragons{
             {
                 _monsterDataset.Add(data);
             }
-            /*
+
             var mockScores = new List<Score>
             {
                 new Score { Id = Guid.NewGuid().ToString(), Name = "First Score", ScoreTotal = 111},
@@ -90,7 +90,7 @@ namespace DungeonsandDragons{
             {
                 _scoreDataset.Add(data);
             }
-            */
+
         }
 
         // Item
@@ -212,7 +212,7 @@ namespace DungeonsandDragons{
             return await Task.FromResult(_monsterDataset);
         }
 
-        /*
+
         // Score
         public async Task<bool> AddAsync_Score(Score data)
         {
@@ -251,6 +251,6 @@ namespace DungeonsandDragons{
         {
             return await Task.FromResult(_scoreDataset);
         }
-        */
+
     }
 }

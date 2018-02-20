@@ -226,7 +226,7 @@ namespace DungeonsandDragons
             var result = await App.Database.Table<Monster>().ToListAsync(); return result;        
         }
 
-        /*
+
         // Score
         public async Task<bool> AddAsync_Score(Score data)
         {
@@ -267,6 +267,6 @@ namespace DungeonsandDragons
         {
             var result = await App.Database.Table<Score>().ToListAsync(); return result;      
         }
-        */
+
     }
 }

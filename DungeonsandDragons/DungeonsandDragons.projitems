@@ -86,6 +86,24 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\Heroes\NewHeroPage.xaml.cs">
       <DependentUpon>NewHeroPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Score.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ScoresViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ScoreDetailViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Scores\ScoresPage.xaml.cs">
+      <DependentUpon>ScoresPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Scores\NewScorePage.xaml.cs">
+      <DependentUpon>NewScorePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Scores\ScoreDetailPage.xaml.cs">
+      <DependentUpon>ScoreDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Scores\EditScorePage.xaml.cs">
+      <DependentUpon>EditScorePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Scores\DeleteScorePage.xaml.cs">
+      <DependentUpon>DeleteScorePage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AboutPage.xaml" />
@@ -131,11 +149,32 @@
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Heroes\HeroDetailPage.xaml" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Heroes\HeroesPage.xaml" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Heroes\NewHeroPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Scores\ScoresPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Scores\NewScorePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Scores\ScoreDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Scores\EditScorePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Scores\DeleteScorePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Views\Items\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\Monsters\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\Heroes\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\Scores\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)Services\CloudDataStore.cs" />

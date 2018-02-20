@@ -11,6 +11,12 @@
             <Entry Text="{Binding Item.Name}" FontSize="Small" />
             <Label Text="Description" FontSize="Medium" />
             <Editor Text="{Binding Item.Description}" FontSize="Small" Margin="0" />
+             <Label Text="Speed" FontSize="Medium" />
+            <Entry Text="{Binding Item.Speed}" FontSize="Small" />
+            <Label Text="Defense" FontSize="Medium" />
+            <Editor Text="{Binding Item.Defense}" FontSize="Small" Margin="0" />
+             <Label Text="Strength" FontSize="Medium" />
+            <Editor Text="{Binding Item.Strength}" FontSize="Small" Margin="0" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

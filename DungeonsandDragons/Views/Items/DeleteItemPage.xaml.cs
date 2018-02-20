@@ -11,14 +11,14 @@ namespace DungeonsandDragons
     public partial class DeleteItemPage : ContentPage
     {
 
-       // private ItemDetailViewModel _viewModel;
-        public Item item { get; set;}
+        // private ItemDetailViewModel _viewModel;
+        public Item item { get; set; }
 
         public DeleteItemPage(ItemDetailViewModel viewModel)
         {
             item = viewModel.Item;
             viewModel.Title = "Delte " + viewModel.Title;
-             InitializeComponent();
+            InitializeComponent();
         }
 
         async void Delete_Clicked(object sender, EventArgs e)

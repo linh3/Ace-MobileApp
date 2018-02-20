@@ -20,7 +20,10 @@ namespace DungeonsandDragons
             var item = new Item
             {
                 Name = "Item 1",
-                Description = "This is an item description."
+                Description = "This is an item description.",
+                Strength = 0,
+                Defense = 0,
+                Speed = 0
             };
 
             viewModel = new ItemDetailViewModel(item);
@@ -45,9 +48,9 @@ namespace DungeonsandDragons
 
         }
 
-        async void Delete_Clicked(object sender, EventArgs e) 
-        { 
-            await Navigation.PushAsync(new DeleteItemPage(viewModel)); 
+        async void Delete_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new DeleteItemPage(viewModel));
         }
     }
 }

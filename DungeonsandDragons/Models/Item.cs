@@ -33,15 +33,20 @@ namespace DungeonsandDragons.Models
             Description = "";
         }
 
-        public void Update (Item newItem)
+        public void Update(Item newItem)
         {
-            if (newItem== null)
+            if (newItem == null)
             {
                 return;
             }
 
             this.Name = newItem.Name;
             this.Description = newItem.Description;
+            this.ImageLink = newItem.ImageLink;
+            this.Strength = newItem.Strength;
+            this.Defense = newItem.Defense;
+            this.Speed = newItem.Speed;
+
 
             return;
         }

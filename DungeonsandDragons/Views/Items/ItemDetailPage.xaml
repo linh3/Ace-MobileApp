@@ -8,7 +8,13 @@
     </ContentPage.ToolbarItems>
 
     <StackLayout Spacing="20" Padding="15">
-		<Label Text="{Binding Item.Name}" FontSize="Medium" />
-		<Label Text="{Binding Item.Description}" FontSize="Small" />
-	</StackLayout>
+        <Label Text="{Binding Item.Name}" FontSize="Medium" />
+        <Label Text="{Binding Item.Description}" FontSize="Small" />
+        <Label Text="{Binding Item.Strength}" FontSize="Small" />
+        <Label Text="{Binding Item.Speed}" FontSize="Small" />
+        <Label Text="{Binding Item.Defense}" FontSize="Small" />
+        <Label Text="{Binding Item.Location}" FontSize="Small" />
+
+        
+    </StackLayout>
 </ContentPage>

@@ -44,17 +44,17 @@ namespace DungeonsandDragons
         {
             base.OnAppearing();
             BindingContext = null;
-            if(ToolbarItems.Count > 0)
+            if (ToolbarItems.Count > 0)
             {
                 ToolbarItems.RemoveAt(0);
             }
 
             InitializeComponent();
-            if(viewModel.Dataset.Count == 0)
+            if (viewModel.Dataset.Count == 0)
             {
                 viewModel.LoadDataCommand.Execute(null);
             }
-            else if(viewModel.NeedsRefresh())
+            else if (viewModel.NeedsRefresh())
             {
                 viewModel.LoadDataCommand.Execute((null));
             }

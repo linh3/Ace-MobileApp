@@ -3,13 +3,13 @@ using DungeonsandDragons.Models;
 
 namespace DungeonsandDragons.ViewModels
 {
-    public class MonsterDetailViewModel : BaseViewModel
+    public class HeroDetailViewModel : BaseViewModel
     {
-        public Monster Monster { get; set; }
-        public MonsterDetailViewModel(Monster monster = null)
+        public Hero Hero { get; set; }
+        public HeroDetailViewModel(Hero hero = null)
         {
-            Title = monster?.Name;
-            Monster = monster;
+            Title = hero?.Name;
+            Hero = hero;
         }
     }
 }

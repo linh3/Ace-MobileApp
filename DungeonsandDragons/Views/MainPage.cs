@@ -9,10 +9,15 @@ namespace DungeonsandDragons
         public MainPage()
         {
             Page monstersPage, itemsPage, aboutPage, gamePage= null;
+            Page heroPage = null;
 
             switch (Device.RuntimePlatform)
             {
                 case Device.iOS:
+                    heroPage = new NavigationPage(new HeroesPage())
+                    {
+                        Title = "Heroes"
+                    };
                     monstersPage = new NavigationPage(new MonstersPage())
                     {
                         Title = "Monsters"
@@ -36,6 +41,10 @@ namespace DungeonsandDragons
                     gamePage.Icon = "tab_about.png";
                     break;
                 default:
+                    heroPage = new HeroesPage()
+                    {
+                        Title = "Heroes"
+                    };
                     monstersPage = new MonstersPage()
                     {
                         Title = "Monsters"
@@ -56,6 +65,7 @@ namespace DungeonsandDragons
                     break;
             }
 
+            Children.Add(heroPage);
             Children.Add(monstersPage);
             Children.Add(itemsPage);
             Children.Add(aboutPage);

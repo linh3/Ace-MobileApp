@@ -69,6 +69,23 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\Monsters\NewMonsterPage.xaml.cs">
       <DependentUpon>NewMonsterPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\HeroDetailViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\HeroesViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Heroes\DeleteHeroPage.xaml.cs">
+      <DependentUpon>DeleteHeroPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Heroes\EditHeroPage.xaml.cs">
+      <DependentUpon>EditHeroPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Heroes\HeroDetailPage.xaml.cs">
+      <DependentUpon>HeroDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Heroes\HeroesPage.xaml.cs">
+      <DependentUpon>HeroesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Heroes\NewHeroPage.xaml.cs">
+      <DependentUpon>NewHeroPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AboutPage.xaml" />
@@ -103,10 +120,22 @@
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Monsters\MonsterDetailPage.xaml" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Monsters\MonstersPage.xaml" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Monsters\NewMonsterPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Heroes\DeleteHeroPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Heroes\EditHeroPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Heroes\HeroDetailPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Heroes\HeroesPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Heroes\NewHeroPage.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Views\Items\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\Monsters\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\Heroes\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)Services\CloudDataStore.cs" />

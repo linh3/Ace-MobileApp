@@ -58,21 +58,25 @@ namespace DungeonsandDragons{
 
             foreach (var data in mockHeroes)
             {
+                data.updateCharacterAttributeValues();
+                data.updateTotalAttributeValues();
                 _heroDataset.Add(data);
             }
 
             var mockMonsters = new List<Monster>
             {
-                new Monster { Id = Guid.NewGuid().ToString(), Name = "First Monster", ImageLink="This is an Monster description." },
-                new Monster { Id = Guid.NewGuid().ToString(), Name = "Second Monster", ImageLink="This is an Monster description." },
-                new Monster { Id = Guid.NewGuid().ToString(), Name = "Third Monster", ImageLink="This is an Monster description." },
-                new Monster { Id = Guid.NewGuid().ToString(), Name = "Fourth Monster", ImageLink="This is an Monster description." },
-                new Monster { Id = Guid.NewGuid().ToString(), Name = "Fifth Monster", ImageLink="This is an Monster description." },
-                new Monster { Id = Guid.NewGuid().ToString(), Name = "Sixth Monster", ImageLink="This is an Monster description." },
+                new Monster { Id = Guid.NewGuid().ToString(), Name = "First Monster", ImageLink="This is the image link for Monster 1", Level = 3 },
+                new Monster { Id = Guid.NewGuid().ToString(), Name = "Second Monster", ImageLink="This is the image link for Monster 2", Level = 19 },
+                new Monster { Id = Guid.NewGuid().ToString(), Name = "Third Monster", ImageLink="This is the image link for Monster 3" , Level = 5},
+                new Monster { Id = Guid.NewGuid().ToString(), Name = "Fourth Monster", ImageLink="This is the image link for Monster 4", Level = 7 },
+                new Monster { Id = Guid.NewGuid().ToString(), Name = "Fifth Monster", ImageLink="This is the image link for Monster 5", Level = 13 },
+                new Monster { Id = Guid.NewGuid().ToString(), Name = "Sixth Monster", ImageLink="This is the image link for Monster 6", Level = 15 },
             };
 
             foreach (var data in mockMonsters)
             {
+                data.updateCharacterAttributeValues();
+                data.updateTotalAttributeValues();
                 _monsterDataset.Add(data);
             }
 

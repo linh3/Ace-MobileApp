@@ -73,13 +73,12 @@ namespace DungeonsandDragons
                     };
                     break;
             }
-
+            Children.Add(gamePage);
             Children.Add(heroesPage);
             Children.Add(monstersPage);
             Children.Add(itemsPage);
             Children.Add(scoresPage);
             Children.Add(aboutPage);
-            Children.Add(gamePage);
 
             Title = Children[0].Title;
         }

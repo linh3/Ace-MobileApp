@@ -3,6 +3,7 @@
     <ContentPage.Content>
         <StackLayout>
            <Button Margin="0,10,0,0" Text="Exit Battle" Clicked = "Exit_Clicked" BackgroundColor="{StaticResource Primary}" TextColor="White" />
-            </StackLayout>
+           <Image Source="game.jpg" />
+        </StackLayout>
         </ContentPage.Content>
         </ContentPage>

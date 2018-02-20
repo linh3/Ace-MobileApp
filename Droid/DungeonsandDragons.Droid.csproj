@@ -157,6 +157,7 @@
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
     <AndroidResource Include="Resources\layout\Toolbar.axml" />
     <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\drawable\game.jpg" />
   </ItemGroup>
   <Import Project="..\DungeonsandDragons\DungeonsandDragons.projitems" Label="Shared" Condition="Exists('..\DungeonsandDragons\DungeonsandDragons.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

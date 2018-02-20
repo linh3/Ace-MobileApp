@@ -13,6 +13,7 @@ namespace DungeonsandDragons.Models
             Level = 0;
             this.Items = new Item[(int)ItemLocation.MaxItemLocation];
             updateLevel();
+            updateCharacterAttributeValues();
             updateTotalAttributeValues();
         }
 

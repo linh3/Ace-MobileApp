@@ -18,6 +18,8 @@ namespace DungeonsandDragons.Models
             Experience = 0;
             Defense = 1;
             SpecialItem = null;
+            updateCharacterAttributeValues();
+            updateTotalAttributeValues();
         }
         // set the level for monster
         // update the attribute values base on the level

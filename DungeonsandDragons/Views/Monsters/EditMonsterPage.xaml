@@ -6,11 +6,22 @@
 
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
+        <ScrollView Orientation="Vertical" VerticalOptions="StartAndExpand">
+
         <StackLayout Spacing="20" Padding="15">
             <Label Text="Name" FontSize="Medium" />
             <Entry Text="{Binding Monster.Name}" FontSize="Small" />
             <Label Text="ImageLink" FontSize="Medium" />
             <Editor Text="{Binding Monster.ImageLink}" FontSize="Small" Margin="0" />
+            <Label Text="Level" FontSize="Medium" />
+            <Editor Text="{Binding Monster.Level}" FontSize="Small" Margin="0" />
+            <Label Text="Strength:" FontSize="Medium" />
+            <Editor Text="{Binding Monster.Strength}" FontSize="Small" Margin="0"/>
+            <Label Text="Defense:" FontSize="Medium"/>
+            <Editor Text="{Binding Monster.Defense}" FontSize="Small" Margin="0" />
+            <Label Text="Speed:" FontSize="Medium" />
+            <Editor Text="{Binding Monster.Speed}" FontSize="Small" Margin="0" />
         </StackLayout>
+            </ScrollView>
     </ContentPage.Content>
 </ContentPage>

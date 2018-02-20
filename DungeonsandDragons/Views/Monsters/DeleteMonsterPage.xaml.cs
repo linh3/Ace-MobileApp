@@ -11,19 +11,20 @@ namespace DungeonsandDragons
     public partial class DeleteMonsterPage : ContentPage
     {
 
-       // private MonsterDetailViewModel _viewModel;
-        public Monster monster { get; set;}
+        private MonsterDetailViewModel viewModel;
+        public Monster Monster { get; set;}
 
         public DeleteMonsterPage(MonsterDetailViewModel viewModel)
         {
-            monster = viewModel.Monster;
-            viewModel.Title = "Delte " + viewModel.Title;
+            Monster = viewModel.Monster;
+            viewModel.Title = "Delete " + viewModel.Title;
              InitializeComponent();
+            BindingContext = this.viewModel = viewModel;
         }
 
         async void Delete_Clicked(object sender, EventArgs e)
         {
-            MessagingCenter.Send(this, "DeleteData", monster);
+            MessagingCenter.Send(this, "DeleteData", Monster);
             Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
             await Navigation.PopAsync();
         }

@@ -52,7 +52,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Services\MockDataStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\IFileHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\IDataStore.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MonsterDetailViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\HeroDetailViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MonstersViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\Monsters\DeleteMonsterPage.xaml.cs">
       <DependentUpon>DeleteMonsterPage.xaml</DependentUpon>
@@ -69,7 +69,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\Monsters\NewMonsterPage.xaml.cs">
       <DependentUpon>NewMonsterPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\HeroDetailViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MonsterDetailViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\HeroesViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\Heroes\DeleteHeroPage.xaml.cs">
       <DependentUpon>DeleteHeroPage.xaml</DependentUpon>

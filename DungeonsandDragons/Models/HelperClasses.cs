@@ -31,7 +31,7 @@ namespace DungeonsandDragons.Models
             table[2].Speed = 1;
             table[2].Attack = 1;
             table[2].Defense = 2;
-            table[2].Defense = 900;
+            table[2].Experience = 900;
             table[3].Speed = 1;
             table[3].Attack = 2;
             table[3].Defense = 3;

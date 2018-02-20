@@ -20,7 +20,11 @@ namespace DungeonsandDragons
             var hero = new Hero
             {
                 Name = "Hero 1",
-                ImageLink = "This is an item description."
+                ImageLink = "This is an item description.",
+                Level = 0,
+                Strength = 0,
+                Defense = 0,
+                Speed = 0
             };
 
             viewModel = new HeroDetailViewModel(hero);

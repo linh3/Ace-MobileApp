@@ -5,9 +5,18 @@
     <ToolbarItem Text="Delete" Clicked="Delete_Clicked" />        
     <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />    
     </ContentPage.ToolbarItems>
-
+    <ScrollView Orientation="Vertical" VerticalOptions="StartAndExpand">
     <StackLayout Spacing="20" Padding="15">
         <Label Text="{Binding Hero.Name}" FontSize="Medium" />
         <Label Text="{Binding Hero.ImageLink}" FontSize="Small" />
+        <Label Text="Level:" FontSize="Small" />
+        <Label Text="{Binding Hero.Level}" FontSize="Small" />
+        <Label Text="Strength:" FontSize="Small" />
+        <Label Text="{Binding Hero.Strength}" FontSize="Small" />
+        <Label Text="Defense:" FontSize="Small" />
+        <Label Text="{Binding Hero.Defense}" FontSize="Small" />
+        <Label Text="Speed:" FontSize="Small" />
+        <Label Text="{Binding Hero.Speed}" FontSize="Small" />
     </StackLayout>
+        </ScrollView>
 </ContentPage>

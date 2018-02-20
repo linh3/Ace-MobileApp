@@ -15,7 +15,11 @@ namespace DungeonsandDragons
             Hero = new Hero
             {
                 Name = "Hero name",
-                ImageLink = "This is an item description."
+                ImageLink = "This is an item description.",
+                Level = 0,
+                Strength = 0,
+                Defense = 0,
+                Speed = 0
             };
 
             BindingContext = this;
@@ -26,7 +30,6 @@ namespace DungeonsandDragons
             MessagingCenter.Send(this, "AddData", Hero);
             await Navigation.PopAsync();
         }
-
 
         async void Cancel_Clicked(object sender, EventArgs e)
         {

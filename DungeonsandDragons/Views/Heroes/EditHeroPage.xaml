@@ -6,11 +6,21 @@
 
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
+        <ScrollView Orientation="Vertical" VerticalOptions="StartAndExpand">
         <StackLayout Spacing="20" Padding="15">
             <Label Text="Name" FontSize="Medium" />
             <Entry Text="{Binding Hero.Name}" FontSize="Small" />
             <Label Text="ImageLink" FontSize="Medium" />
             <Editor Text="{Binding Hero.ImageLink}" FontSize="Small" Margin="0" />
+            <Label Text="Level" FontSize="Medium" />
+            <Editor Text="{Binding Hero.Level}" FontSize="Small" Margin="0" />
+            <Label Text="Strength:" FontSize="Medium" />
+            <Editor Text="{Binding Hero.Strength}" FontSize="Small" Margin="0"/>
+            <Label Text="Defense:" FontSize="Medium"/>
+            <Editor Text="{Binding Hero.Defense}" FontSize="Small" Margin="0" />
+            <Label Text="Speed:" FontSize="Medium" />
+            <Editor Text="{Binding Hero.Speed}" FontSize="Small" Margin="0" />
         </StackLayout>
+            </ScrollView>
     </ContentPage.Content>
 </ContentPage>

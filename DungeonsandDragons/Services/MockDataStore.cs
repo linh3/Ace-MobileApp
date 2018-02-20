@@ -48,12 +48,12 @@ namespace DungeonsandDragons{
 
             var mockHeroes = new List<Hero>
             {
-                new Hero { Id = Guid.NewGuid().ToString(), Name = "First Hero", ImageLink="This is an Character description.", Level = 1 },
-                new Hero { Id = Guid.NewGuid().ToString(), Name = "Second Hero", ImageLink="This is an Character description." , Level = 1},
-                new Hero { Id = Guid.NewGuid().ToString(), Name = "Third Hero", ImageLink="This is an Character description." , Level = 2},
-                new Hero { Id = Guid.NewGuid().ToString(), Name = "Fourth Hero", ImageLink="This is an Character description." , Level = 2},
-                new Hero { Id = Guid.NewGuid().ToString(), Name = "Fifth Hero", ImageLink="This is an Character description." , Level = 3},
-                new Hero { Id = Guid.NewGuid().ToString(), Name = "Sixth Hero", ImageLink="This is an Character description." , Level = 3},
+                new Hero { Id = Guid.NewGuid().ToString(), Name = "First Hero", ImageLink="An image link to Hero1.", Level = 1 },
+                new Hero { Id = Guid.NewGuid().ToString(), Name = "Second Hero", ImageLink="An image link to Hero2." , Level = 1},
+                new Hero { Id = Guid.NewGuid().ToString(), Name = "Third Hero", ImageLink="An image link to Hero3." , Level = 2},
+                new Hero { Id = Guid.NewGuid().ToString(), Name = "Fourth Hero", ImageLink="An image link to Hero4." , Level = 2},
+                new Hero { Id = Guid.NewGuid().ToString(), Name = "Fifth Hero", ImageLink="An image link to Hero5." , Level = 3},
+                new Hero { Id = Guid.NewGuid().ToString(), Name = "Sixth Hero", ImageLink="An image link to Hero6." , Level = 3},
             };
 
             foreach (var data in mockHeroes)

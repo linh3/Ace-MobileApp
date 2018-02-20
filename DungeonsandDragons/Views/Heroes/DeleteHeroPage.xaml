@@ -16,7 +16,7 @@
         <Label Text="Defense:" FontSize="Small" />
         <Label Text="{Binding Hero.Defense}" FontSize="Small" />
         <Label Text="Speed:" FontSize="Small" />
-        <Label Text="{Binding Hero.Speed}" FontSize="Small" />
+        <Label Text="{Binding Hero.Speed}" FontSize="Small"  />
     </StackLayout>
         </ScrollView>
 </ContentPage>

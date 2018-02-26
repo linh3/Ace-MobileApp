@@ -48,12 +48,12 @@ namespace DungeonsandDragons{
 
             var mockHeroes = new List<Hero>
             {
-                new Hero { Id = Guid.NewGuid().ToString(), Name = "First Hero", ImageLink="An image link to Hero1.", Level = 1 },
-                new Hero { Id = Guid.NewGuid().ToString(), Name = "Second Hero", ImageLink="An image link to Hero2." , Level = 1},
-                new Hero { Id = Guid.NewGuid().ToString(), Name = "Third Hero", ImageLink="An image link to Hero3." , Level = 2},
+                new Hero { Id = Guid.NewGuid().ToString(), Name = "First Hero", ImageLink="An image link to Hero1.", Level = 2 },
+                new Hero { Id = Guid.NewGuid().ToString(), Name = "Second Hero", ImageLink="An image link to Hero2." , Level = 2},
+                new Hero { Id = Guid.NewGuid().ToString(), Name = "Third Hero", ImageLink="An image link to Hero3." , Level = 1},
                 new Hero { Id = Guid.NewGuid().ToString(), Name = "Fourth Hero", ImageLink="An image link to Hero4." , Level = 2},
-                new Hero { Id = Guid.NewGuid().ToString(), Name = "Fifth Hero", ImageLink="An image link to Hero5." , Level = 3},
-                new Hero { Id = Guid.NewGuid().ToString(), Name = "Sixth Hero", ImageLink="An image link to Hero6." , Level = 3},
+                new Hero { Id = Guid.NewGuid().ToString(), Name = "Fifth Hero", ImageLink="An image link to Hero5." , Level = 1},
+                new Hero { Id = Guid.NewGuid().ToString(), Name = "Sixth Hero", ImageLink="An image link to Hero6." , Level = 2},
             };
 
             foreach (var data in mockHeroes)
@@ -65,12 +65,12 @@ namespace DungeonsandDragons{
 
             var mockMonsters = new List<Monster>
             {
-                new Monster { Id = Guid.NewGuid().ToString(), Name = "First Monster", ImageLink="This is the image link for Monster 1", Level = 3 },
-                new Monster { Id = Guid.NewGuid().ToString(), Name = "Second Monster", ImageLink="This is the image link for Monster 2", Level = 19 },
-                new Monster { Id = Guid.NewGuid().ToString(), Name = "Third Monster", ImageLink="This is the image link for Monster 3" , Level = 5},
-                new Monster { Id = Guid.NewGuid().ToString(), Name = "Fourth Monster", ImageLink="This is the image link for Monster 4", Level = 7 },
-                new Monster { Id = Guid.NewGuid().ToString(), Name = "Fifth Monster", ImageLink="This is the image link for Monster 5", Level = 13 },
-                new Monster { Id = Guid.NewGuid().ToString(), Name = "Sixth Monster", ImageLink="This is the image link for Monster 6", Level = 15 },
+                new Monster { Id = Guid.NewGuid().ToString(), Name = "First Monster", ImageLink="This is the image link for Monster 1", Level = 1 },
+                new Monster { Id = Guid.NewGuid().ToString(), Name = "Second Monster", ImageLink="This is the image link for Monster 2", Level = 1 },
+                new Monster { Id = Guid.NewGuid().ToString(), Name = "Third Monster", ImageLink="This is the image link for Monster 3" , Level = 1},
+                new Monster { Id = Guid.NewGuid().ToString(), Name = "Fourth Monster", ImageLink="This is the image link for Monster 4", Level = 1 },
+                new Monster { Id = Guid.NewGuid().ToString(), Name = "Fifth Monster", ImageLink="This is the image link for Monster 5", Level = 1 },
+                new Monster { Id = Guid.NewGuid().ToString(), Name = "Sixth Monster", ImageLink="This is the image link for Monster 6", Level = 1 },
             };
 
             foreach (var data in mockMonsters)
@@ -176,6 +176,16 @@ namespace DungeonsandDragons{
             return await Task.FromResult(_heroDataset);
         }
 
+        public async Task<IEnumerable<Hero>> GetAsync_HeroParty(bool forceRefresh = false)
+        {
+            List<Hero> dataSet = new List<Hero>();
+            for (int i = 0; i < 5; i++)
+            {
+                dataSet.Add(new Hero(_heroDataset[i]));
+            }
+            return await Task.FromResult(dataSet);
+        }
+
 
         //Monster
         public async Task<bool> AddAsync_Monster(Monster data)
@@ -214,6 +224,16 @@ namespace DungeonsandDragons{
         public async Task<IEnumerable<Monster>> GetAllAsync_Monster(bool forceRefresh = false)
         {
             return await Task.FromResult(_monsterDataset);
+        }
+
+        public async Task<IEnumerable<Monster>> GetAsync_MonsterParty(bool forceRefresh = false)
+        {
+            List<Monster> dataSet = new List<Monster>();
+            for (int i = 0; i < 5; i++)
+            {
+                dataSet.Add(new Monster(_monsterDataset[i]));
+            }
+            return await Task.FromResult(dataSet);
         }
 
 

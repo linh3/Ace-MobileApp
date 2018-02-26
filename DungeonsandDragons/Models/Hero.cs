@@ -17,6 +17,18 @@ namespace DungeonsandDragons.Models
             updateTotalAttributeValues();
         }
 
+        public Hero(Hero rhs)
+        {
+            Id = rhs.Id;
+            Name = rhs.Name;
+            ImageLink = rhs.ImageLink;
+            Level = rhs.Level;
+            this.Items = new Item[(int)ItemLocation.MaxItemLocation];
+            updateLevel();
+            updateCharacterAttributeValues();
+            updateTotalAttributeValues();
+        }
+
         // Add experience points to the current hero
         // check if the hero can level up or not
         public void gainExperience(int experience)
@@ -106,6 +118,16 @@ namespace DungeonsandDragons.Models
         {
             Name = data.Name;
             ImageLink = data.ImageLink;
+        }
+
+        // Subtract the current health with the damage
+        public void takeDamage(int damage)
+        {
+            this.Health -= damage;
+            if (this.Health <= 0)
+            {
+                this.isAlive = false;
+            }
         }
 
     }

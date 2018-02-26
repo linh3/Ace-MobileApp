@@ -13,7 +13,7 @@ namespace DungeonsandDragons
         }
         async public void StartBattle_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new BattlePage());
+            await Navigation.PushAsync(new BattlePage());
         }
     }
 }

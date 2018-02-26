@@ -58,7 +58,7 @@ namespace DungeonsandDragons.Models
 
 
         // Generate the attack number from this character
-        public int attack() => this.Strength;
+        public int attack() => this.TotalStength;
 
         // Generate the defense number from this character
         public int defense() => this.Defense;
@@ -69,19 +69,12 @@ namespace DungeonsandDragons.Models
             return (float)this.Health / (float)this.MaxHealth;
         }
 
-        // Subtract the current health with the damage
-        public void takeDamage(int damage)
-        {
-            this.Health -= damage;
-            if(this.Health <= 0){
-                this.isAlive = false;
-            }
-        }
+
 
 
 
         // update the attribute Values with the AttributeChart for current level
-        public void updateCharacterAttributeValues()
+        virtual public void updateCharacterAttributeValues()
         {
             this.Strength = LevelAttributeChart.table[this.Level].Attack;
             this.Defense = LevelAttributeChart.table[this.Level].Defense;
@@ -89,6 +82,10 @@ namespace DungeonsandDragons.Models
             int newMaxHealth = 5 + this.Level * 5;
             this.Health = newMaxHealth - (this.MaxHealth - this.Health);
             this.MaxHealth = newMaxHealth;
+            if(this.Experience < LevelAttributeChart.table[this.Level-1].Experience)
+            {
+                this.Experience = LevelAttributeChart.table[this.Level - 1].Experience;
+            }
         }
 
 

@@ -105,6 +105,10 @@
       <DependentUpon>DeleteScorePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Models\ItemLocation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AutoBattleViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\AutoBattlePage.xaml.cs">
+      <DependentUpon>AutoBattlePage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AboutPage.xaml" />
@@ -167,6 +171,10 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Scores\DeleteScorePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AutoBattlePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

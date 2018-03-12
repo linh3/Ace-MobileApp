@@ -54,6 +54,8 @@
                     </Label.FormattedText>
                 </Label>
                 <Button Margin="0,10,0,0" Text="Start Battle" Clicked = "StartBattle_Clicked" BackgroundColor="{StaticResource Primary}" TextColor="White" />
+                <Button Margin="0,10,0,0" Text="Auto Battle" Clicked = "AutoBattle_Clicked" BackgroundColor="{StaticResource Primary}" TextColor="White" />
+
             </StackLayout>
         </ScrollView>
     </Grid>

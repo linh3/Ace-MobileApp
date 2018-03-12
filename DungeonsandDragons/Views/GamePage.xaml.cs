@@ -15,5 +15,10 @@ namespace DungeonsandDragons
         {
             await Navigation.PushAsync(new BattlePage());
         }
+
+        async public void AutoBattle_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AutoBattlePage());
+        }
     }
 }

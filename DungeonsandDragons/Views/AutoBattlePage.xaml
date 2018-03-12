@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DungeonsandDragons.AutoBattlePage" Title="{Binding Title}" x:Name="AutoBattlePage">
+<!--    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Exit" Clicked="Exit_Clicked" />
+    </ContentPage.ToolbarItems>-->
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="{Binding Battle.round}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="16" />
+                <Label Text="Round" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="16" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" VerticalOptions="Start" Padding="10">
+                <StackLayout HorizontalOptions="Center">
+                    <Label Text="Heroes Party" LineBreakMode="NoWrap" HorizontalOptions="Center" Style="{DynamicResource ListItemTextStyle}" FontSize="16" />
+                    <ListView x:Name="HeroesListView" ItemsSource="{Binding Battle.Heroes}" VerticalOptions="Start" HasUnevenRows="true" RefreshCommand="{Binding LoadDataCommand}" IsPullToRefreshEnabled="false" IsRefreshing="{Binding IsBusy, Mode=OneWay}" CachingStrategy="RetainElement" SeparatorVisibility="Default">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Vertical">
+                                        <StackLayout Padding="3">
+                                            <Label Text="{Binding Name}" FontSize="16" HorizontalOptions="Center" />
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                                <Label Text="Health:" FontSize="10" HorizontalOptions="Start" />
+                                                <Label Text="{Binding Health}" FontSize="10" HorizontalOptions="Start" />
+                                                <Label Text="Alive:" FontSize="10" HorizontalOptions="Start" />
+                                                <Label Text="{Binding isAlive}" FontSize="10" HorizontalOptions="Start" />
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                                <Label Text="Lv:" FontSize="10" HorizontalOptions="Start" />
+                                                <Label Text="{Binding Level}" FontSize="10" HorizontalOptions="Start" />
+                                                <Label Text="Att:" FontSize="10" HorizontalOptions="Start" />
+                                                <Label Text="{Binding Strength}" FontSize="10" HorizontalOptions="Start" />
+                                                <Label Text="Exp:" FontSize="10" HorizontalOptions="Start" />
+                                                <Label Text="{Binding Experience}" FontSize="10" HorizontalOptions="Start" />
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+                <StackLayout HorizontalOptions="Center">
+                    <Label Text="Monster Party" LineBreakMode="NoWrap" HorizontalOptions="Center" Style="{DynamicResource ListItemTextStyle}" FontSize="16" />
+                    <ListView x:Name="MonsterListView" ItemsSource="{Binding Battle.Monsters}" VerticalOptions="Start" HasUnevenRows="true" RefreshCommand="{Binding LoadDataCommand}" IsPullToRefreshEnabled="false" IsRefreshing="{Binding IsBusy, Mode=OneWay}" CachingStrategy="RetainElement" SeparatorVisibility="None">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Vertical">
+                                        <StackLayout Padding="3">
+                                            <Label Text="{Binding Name}" FontSize="16" HorizontalOptions="Center" />
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                                <Label Text="Health:" FontSize="10" HorizontalOptions="Start" />
+                                                <Label Text="{Binding Health}" FontSize="10" HorizontalOptions="Start" />
+                                                <Label Text="Alive:" FontSize="10" HorizontalOptions="Start" />
+                                                <Label Text="{Binding isAlive}" FontSize="10" HorizontalOptions="Start" />
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                             <Label Text="Lv:" FontSize="10" HorizontalOptions="Start" />
+                                                <Label Text="{Binding Level}" FontSize="10" HorizontalOptions="Start" />
+                                                <Label Text="Att:" FontSize="10" HorizontalOptions="Start" />
+                                                <Label Text="{Binding Strength}" FontSize="10" HorizontalOptions="Start" />
+                                                <Label Text="Exp:" FontSize="10" HorizontalOptions="Start" />
+                                                <Label Text="{Binding Experience}" FontSize="10" HorizontalOptions="Start" />
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </StackLayout>
+            <Label Text="Message:" FontSize="16"/>
+            <StackLayout Padding="10" HeightRequest="60" Orientation="Horizontal" HorizontalOptions="Start">
+                <Label x:Name="TextField" FontSize="12" Text= ""/>
+            </StackLayout>
+            <Button x:Name="AutoBattleButton" Text="Battle" Clicked="AutoBattleButtonClicked">
+            </Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

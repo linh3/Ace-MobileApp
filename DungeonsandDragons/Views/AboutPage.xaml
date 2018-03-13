@@ -3,58 +3,32 @@
 	<ContentPage.BindingContext>
 		<vm:AboutViewModel />
 	</ContentPage.BindingContext>
-	<Grid>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="Auto" />
-			<RowDefinition Height="*" />
-		</Grid.RowDefinitions>
-		<StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
-			<StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-				<ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
-					<Image Source="xamarin_logo.png" VerticalOptions="Center" HeightRequest="64" />
-				</ContentView>
-			</StackLayout>
-		</StackLayout>
-		<ScrollView Grid.Row="1">
-			<StackLayout Orientation="Vertical" Padding="16,40,16,40" Spacing="10">
-				<Label FontSize="22">
-					<Label.FormattedText>
-						<FormattedString>
-							<FormattedString.Spans>
-								<Span Text="TEST2" FontAttributes="Bold" FontSize="22" />
-								<Span Text=" " />
-								<Span Text="1.0" ForegroundColor="{StaticResource LightTextColor}" />
-							</FormattedString.Spans>
-						</FormattedString>
-					</Label.FormattedText>
-				</Label>
-				<Label>
-					<Label.FormattedText>
-						<FormattedString>
-							<FormattedString.Spans>
-								<Span Text="This app is written in C# and native APIs using the" />
-								<Span Text=" " />
-								<Span Text="Xamarin Platform" FontAttributes="Bold" />
-								<Span Text="." />
-							</FormattedString.Spans>
-						</FormattedString>
-					</Label.FormattedText>
-				</Label>
-				<Label>
-					<Label.FormattedText>
-						<FormattedString>
-							<FormattedString.Spans>
-								<Span Text="It shares code with its" />
-								<Span Text=" " />
-								<Span Text="iOS, Android, and Windows" FontAttributes="Bold" />
-								<Span Text=" " />
-								<Span Text="versions." />
-							</FormattedString.Spans>
-						</FormattedString>
-					</Label.FormattedText>
-				</Label>
-				<Button Margin="0,10,0,0" Text="Learn more" Command="{Binding OpenWebCommand}" BackgroundColor="{StaticResource Primary}" TextColor="White" />
-			</StackLayout>
-		</ScrollView>
-	</Grid>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <!--<StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">-->
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+            <ContentView Padding="0,40,0,40" >
+                <Image Source="dragonimage.png" VerticalOptions="Center" HeightRequest="150" />
+            </ContentView>
+        </StackLayout>
+        <!--</StackLayout>-->
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="16,40,16,40" Spacing="10" HorizontalOptions="Center" VerticalOptions="Center">
+                <Label FontSize="22">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Dungeons and Dragons" FontAttributes="Bold" FontSize="22" />
+                                <Span Text=" " />
+                                <!--<Span Text="1.0" ForegroundColor="{StaticResource LightTextColor}" />-->
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
 </ContentPage>

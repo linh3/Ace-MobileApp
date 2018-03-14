@@ -53,9 +53,13 @@ namespace DungeonsandDragons.ViewModels
                 needsRefresh = true;
             });
 
-            MessagingCenter.Subscribe<DeleteItemPage, Item>(this, "DeleteData", async (obj, data) =>             {                 Dataset.Remove(data);                 //await DataStore.DeleteAsync_Item(data);
+            MessagingCenter.Subscribe<DeleteItemPage, Item>(this, "DeleteData", async (obj, data) =>
+            {
+                Dataset.Remove(data);
+                //await DataStore.DeleteAsync_Item(data);
                 await DataStore.DeleteAsync_Item(data);
-                needsRefresh = true;             }); 
+                needsRefresh = true;
+            }); 
         }
 
         async Task ExecuteLoadDataCommand()

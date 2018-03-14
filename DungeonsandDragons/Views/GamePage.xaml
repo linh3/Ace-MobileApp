@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DungeonsandDragons.GamePage" xmlns:vm="clr-namespace:DungeonsandDragons.ViewModels;" Title="{Binding Title}">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DungeonsandDragons.GamePage" xmlns:vm="clr-namespace:DungeonsandDragons.ViewModels;" BackgroundImage="background2.jpg"  Title="{Binding Title}">
     <ContentPage.BindingContext>
         <vm:GameViewModel />
     </ContentPage.BindingContext>
     <Grid>
-        <Grid.RowDefinitions>
+           <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
@@ -26,9 +26,11 @@
                     <Label.FormattedText>
                         <FormattedString>
                             <FormattedString.Spans>
-                                <Span Text="Dungeons and Dragons" FontAttributes="Bold" FontSize="22" />
+                                <Span Text="Dungeons and Dragons" FontAttributes="Bold" FontSize="26" />
                                 <Span Text=" " />
-                                --><!--<Span Text="1.0" ForegroundColor="{StaticResource LightTextColor}" />--><!--
+                                
+                <Span Text="1.0" ForegroundColor="{StaticResource LightTextColor}" />
+                
                             </FormattedString.Spans>
                         </FormattedString>
                     </Label.FormattedText>
@@ -39,5 +41,6 @@
 
             </StackLayout>
         </ScrollView>
+        <!--</BackgroundImage>-->
     </Grid>
 </ContentPage>

@@ -6,12 +6,90 @@
     <ToolbarItem Text="Delete" Clicked="Delete_Clicked" />
     <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />
     </ContentPage.ToolbarItems>
-    <ContentPage.Content>
+
+    <ScrollView>
+        <StackLayout 
+            x:Name="DetailsRoot"
+            Orientation="Vertical"
+            Spacing="20"
+            Padding="15">
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="Center">
+            <Label Text="Heroes Detail Page" FontSize="Large" />
+            </StackLayout>
+
+            <Image Source="{Binding Hero.ImageLink}"
+                WidthRequest="150"
+                HeightRequest="150" 
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+
+            <StackLayout
+                Orientation="Horizontal"
+                HorizontalOptions="Start">
+                <Label Text="Name : " 
+                   FontSize="Medium" 
+                   HorizontalOptions="Start"/>
+                <Label Text="{Binding Hero.Name}" 
+                    FontSize="Medium" 
+                    HorizontalOptions="Center"/>
+            </StackLayout>
+
+            <StackLayout
+                Orientation="Horizontal"
+                HorizontalOptions="Start">
+                <Label Text="Level : " 
+                   FontSize="Medium" 
+                   HorizontalOptions="Start"/>
+                <Label Text="{Binding Hero.Level}" 
+                    FontSize="Medium" 
+                    HorizontalOptions="Center"/>
+            </StackLayout>
+
+            <StackLayout
+                Orientation="Horizontal"
+                HorizontalOptions="Start">
+                <Label Text="Strength : " 
+                   FontSize="Medium" 
+                   HorizontalOptions="Start"/>
+                <Label Text="{Binding Hero.Strength}" 
+                    FontSize="Medium" 
+                    HorizontalOptions="Center"/>
+            </StackLayout>
+
+            <StackLayout
+                Orientation="Horizontal"
+                HorizontalOptions="Start">
+                <Label Text="Defense : " 
+                   FontSize="Medium" 
+                   HorizontalOptions="Start"/>
+                <Label Text="{Binding Hero.Defense}" 
+                    FontSize="Medium" 
+                    HorizontalOptions="Center"/>
+            </StackLayout>
+
+            <StackLayout
+                Orientation="Horizontal"
+                HorizontalOptions="Start">
+                <Label Text="Speed : " 
+                   FontSize="Medium" 
+                   HorizontalOptions="Start"/>
+                <Label Text="{Binding Hero.Speed}" 
+                    FontSize="Medium" 
+                    HorizontalOptions="Center"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+
+
+
+    <!--<ContentPage.Content>
         <ScrollView Orientation="Vertical" VerticalOptions="StartAndExpand">
     <StackLayout Spacing="20" Padding="15">
 		<Label Text="{Binding Hero.Name}" FontSize="Medium" />
 		<Label Text="{Binding Hero.ImageLink}" FontSize="Small" />
-        <!--<Label Text="{Binding Hero.Level}" FontSize="Small" />-->
+        --><!--<Label Text="{Binding Hero.Level}" FontSize="Small" />--><!--
         <Label Text="Level:" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
         <Label Text="{Binding Hero.Level}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
         <Label Text="Strength:" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
@@ -22,5 +100,5 @@
         <Label Text="{Binding Hero.Speed}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
         </StackLayout>
             </ScrollView>
-        </ContentPage.Content>
+        </ContentPage.Content>-->
 </ContentPage>

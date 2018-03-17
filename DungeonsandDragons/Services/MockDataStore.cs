@@ -48,12 +48,12 @@ namespace DungeonsandDragons{
 
             var mockHeroes = new List<Hero>
             {
-                new Hero { Id = Guid.NewGuid().ToString(), Name = "First Hero", ImageLink="https://www.clker.com/cliparts/a/1/b/2/1521249390858993631imageedit_30_6056397475.med.png", Level = 2 },
-                new Hero { Id = Guid.NewGuid().ToString(), Name = "Second Hero", ImageLink="https://www.clker.com/cliparts/f/4/d/4/15212495851406653662imageedit_32_9581332802.med.png" , Level = 2},
-                new Hero { Id = Guid.NewGuid().ToString(), Name = "Third Hero", ImageLink="https://www.clker.com/cliparts/6/1/8/0/15212496721626432074hero3.med.png" , Level = 1},
-                new Hero { Id = Guid.NewGuid().ToString(), Name = "Fourth Hero", ImageLink="https://www.clker.com/cliparts/2/7/7/9/15212497031821453567hero4.med.png" , Level = 2},
-                new Hero { Id = Guid.NewGuid().ToString(), Name = "Fifth Hero", ImageLink="https://www.clker.com/cliparts/d/d/0/d/1521249730174335390hero5.med.png" , Level = 1 },
-                new Hero { Id = Guid.NewGuid().ToString(), Name = "Sixth Hero", ImageLink="https://www.clker.com/cliparts/a/6/4/d/1521249775910609355hero6.med.png" , Level = 2},
+                new Hero { Id = Guid.NewGuid().ToString(), Name = "The Iron Baby", ImageLink="https://www.clker.com/cliparts/a/1/b/2/1521249390858993631imageedit_30_6056397475.med.png", Level = 2 },
+                new Hero { Id = Guid.NewGuid().ToString(), Name = "Hulk Baby", ImageLink="https://www.clker.com/cliparts/f/4/d/4/15212495851406653662imageedit_32_9581332802.med.png" , Level = 2},
+                new Hero { Id = Guid.NewGuid().ToString(), Name = "Kiddo", ImageLink="https://www.clker.com/cliparts/6/1/8/0/15212496721626432074hero3.med.png" , Level = 1},
+                new Hero { Id = Guid.NewGuid().ToString(), Name = "The Spider Baby", ImageLink="https://www.clker.com/cliparts/2/7/7/9/15212497031821453567hero4.med.png" , Level = 2},
+                new Hero { Id = Guid.NewGuid().ToString(), Name = "Baby Bat", ImageLink="https://www.clker.com/cliparts/d/d/0/d/1521249730174335390hero5.med.png" , Level = 1 },
+                new Hero { Id = Guid.NewGuid().ToString(), Name = "The Baby Captain", ImageLink="https://www.clker.com/cliparts/a/6/4/d/1521249775910609355hero6.med.png" , Level = 2},
             };
 
             foreach (var data in mockHeroes)
@@ -65,12 +65,12 @@ namespace DungeonsandDragons{
 
             var mockMonsters = new List<Monster>
             {
-                new Monster { Id = Guid.NewGuid().ToString(), Name = "First Monster", ImageLink="https://www.clker.com/cliparts/b/1/b/c/15212499601676696766mon1.med.png", Level = 1 },
-                new Monster { Id = Guid.NewGuid().ToString(), Name = "Second Monster", ImageLink="https://www.clker.com/cliparts/5/d/0/f/15212499871115384043mon2.med.png", Level = 1 },
-                new Monster { Id = Guid.NewGuid().ToString(), Name = "Third Monster", ImageLink="https://www.clker.com/cliparts/f/0/3/0/15212508761952413940mon3.med.png" , Level = 1},
-                new Monster { Id = Guid.NewGuid().ToString(), Name = "Fourth Monster", ImageLink="https://www.clker.com/cliparts/c/9/8/b/15212509041548435442mon4.med.png", Level = 1 },
-                new Monster { Id = Guid.NewGuid().ToString(), Name = "Fifth Monster", ImageLink="https://www.clker.com/cliparts/6/6/e/d/15212509311695532986mon5.med.png", Level = 1 },
-                new Monster { Id = Guid.NewGuid().ToString(), Name = "Sixth Monster", ImageLink="https://www.clker.com/cliparts/1/9/3/f/15212509571420675881mon6.med.png", Level = 1 },
+                new Monster { Id = Guid.NewGuid().ToString(), Name = "Octo", ImageLink="https://www.clker.com/cliparts/b/1/b/c/15212499601676696766mon1.med.png", Level = 1 },
+                new Monster { Id = Guid.NewGuid().ToString(), Name = "Dingo", ImageLink="https://www.clker.com/cliparts/5/d/0/f/15212499871115384043mon2.med.png", Level = 1 },
+                new Monster { Id = Guid.NewGuid().ToString(), Name = "Golgappa", ImageLink="https://www.clker.com/cliparts/f/0/3/0/15212508761952413940mon3.med.png" , Level = 1},
+                new Monster { Id = Guid.NewGuid().ToString(), Name = "Kattapa", ImageLink="https://www.clker.com/cliparts/c/9/8/b/15212509041548435442mon4.med.png", Level = 1 },
+                new Monster { Id = Guid.NewGuid().ToString(), Name = "Rajnikanth", ImageLink="https://www.clker.com/cliparts/6/6/e/d/15212509311695532986mon5.med.png", Level = 1 },
+                new Monster { Id = Guid.NewGuid().ToString(), Name = "Shakal", ImageLink="https://www.clker.com/cliparts/1/9/3/f/15212509571420675881mon6.med.png", Level = 1 },
             };
 
             foreach (var data in mockMonsters)

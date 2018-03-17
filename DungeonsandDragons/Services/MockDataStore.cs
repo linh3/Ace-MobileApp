@@ -48,7 +48,7 @@ namespace DungeonsandDragons{
 
             var mockHeroes = new List<Hero>
             {
-                new Hero { Id = Guid.NewGuid().ToString(), Name = "The Iron Baby", ImageLink="https://www.clker.com/cliparts/a/1/b/2/1521249390858993631imageedit_30_6056397475.med.png", Level = 2 },
+                new Hero { Id = Guid.NewGuid().ToString(), Name = "The Boss Baby", ImageLink="https://www.clker.com/cliparts/a/1/b/2/1521249390858993631imageedit_30_6056397475.med.png", Level = 2 , },
                 new Hero { Id = Guid.NewGuid().ToString(), Name = "Hulk Baby", ImageLink="https://www.clker.com/cliparts/f/4/d/4/15212495851406653662imageedit_32_9581332802.med.png" , Level = 2},
                 new Hero { Id = Guid.NewGuid().ToString(), Name = "Kiddo", ImageLink="https://www.clker.com/cliparts/6/1/8/0/15212496721626432074hero3.med.png" , Level = 1},
                 new Hero { Id = Guid.NewGuid().ToString(), Name = "The Spider Baby", ImageLink="https://www.clker.com/cliparts/2/7/7/9/15212497031821453567hero4.med.png" , Level = 2},

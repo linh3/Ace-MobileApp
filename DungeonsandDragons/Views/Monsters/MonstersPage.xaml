@@ -11,7 +11,7 @@
 						<ViewCell>
 							<StackLayout Padding="10">
                                 <Label Text="{Binding Name}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="16" TextColor="Black" />
-                                <Label Text="{Binding ImageLink}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13"  TextColor="Black"/>
+                                <!--<Label Text="{Binding ImageLink}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13"  TextColor="Black"/>-->
                                 <Label Text="Level:" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" TextColor="Black" />
                                 <Label Text="{Binding Level}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13"  TextColor="Black"/>
                                 <Label Text="Strength:" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" TextColor="Black"/>

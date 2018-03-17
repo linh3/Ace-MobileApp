@@ -194,6 +194,9 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\background2in.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\hero5.png" />
+  </ItemGroup>
   <Import Project="..\DungeonsandDragons\DungeonsandDragons.projitems" Label="Shared" Condition="Exists('..\DungeonsandDragons\DungeonsandDragons.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Compat.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Compat.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Compat.targets')" />

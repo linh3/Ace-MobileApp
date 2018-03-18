@@ -25,10 +25,10 @@ namespace DungeonsandDragons
 
         }
 
-        async public void Exit_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PopAsync();
-        }
+        //async public void Exit_Clicked(object sender, EventArgs e)
+        //{
+        //    await Navigation.PopAsync();
+        //}
 
         //async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         //{
@@ -97,7 +97,7 @@ namespace DungeonsandDragons
                     TextField.Text = TextField.Text + "\n" + viewModel.nextPlayer.Name + " will attack " + viewModel.Defender.Name + " next.";
                 }
             }
-            MonsterListView.SeparatorVisibility = SeparatorVisibility.Default;
+            //MonsterListView.SeparatorVisibility = SeparatorVisibility.Default;
 
         }
 
@@ -125,7 +125,7 @@ namespace DungeonsandDragons
             InitializeComponent();
             BindingContext = viewModel;
             TextField.Text = "This is Round " + viewModel.Battle.round.ToString() +"\n" + viewModel.nextPlayer.Name + " will attack " + viewModel.Defender.Name + " next.";
-            MonsterListView.SeparatorVisibility = SeparatorVisibility.Default;
+            //MonsterListView.SeparatorVisibility = SeparatorVisibility.Default;
             BattleButton.Text = "Next Turn";
         }
 

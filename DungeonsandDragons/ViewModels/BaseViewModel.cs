@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using DungeonsandDragons.Models;
+using DungeonsandDragons.Services;
 using Xamarin.Forms;
 
 namespace DungeonsandDragons.ViewModels
@@ -10,7 +11,35 @@ namespace DungeonsandDragons.ViewModels
     public class BaseViewModel : INotifyPropertyChanged
     {
 
-        public IDataStore DataStore => DependencyService.Get<IDataStore>() ??  MockDataStore.Instance;
+        private IDataStore DataStoreMock => DependencyService.Get<IDataStore>() ?? MockDataStore.Instance;
+        private IDataStore DataStoreSql => DependencyService.Get<IDataStore>() ?? SQLDataStore.Instance;
+
+        public IDataStore DataStore;
+
+        public BaseViewModel()
+        {
+            DataStore = DataStoreMock;
+        }
+
+        public enum DataStoreEnum { Unknown = 0, Sql = 1, Mock = 2 }
+
+        public void SetDataStore(DataStoreEnum data)
+        {
+            switch (data)
+            {
+                case DataStoreEnum.Mock:
+                    DataStore = DataStoreMock;
+                    break;
+
+                case DataStoreEnum.Sql:
+                    DataStore = DataStoreSql;
+                    break;
+                case DataStoreEnum.Unknown:
+                default:
+                    DataStore = DataStoreMock;
+                    break;
+            }
+        }
 
         bool isBusy = false;
         public bool IsBusy

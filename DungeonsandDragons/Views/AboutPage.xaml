@@ -29,6 +29,34 @@
                     </Label.FormattedText>
                 </Label>
             </StackLayout>
+            <StackLayout
+                HorizontalOptions="FillAndExpand"
+                Orientation="Horizontal">
+
+                <Label 
+                    FontSize="Small"
+                    Text="Server Items"
+                    HorizontalTextAlignment="Start"
+                    HorizontalOptions="Start"/>
+
+                <Button  
+                    Text="Get" 
+                    Clicked="GetItems_Command" 
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="Black" />
+                                <Label 
+                    FontSize="Small"
+                    Text="Server Items Post Example"
+                    HorizontalTextAlignment="Start"
+                    HorizontalOptions="Start"/>
+
+                <Button  
+                    Text="Get" 
+                    Clicked="GetItemsPost_Command" 
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="Black" />
+            </StackLayout>
+
         </ScrollView>
     </Grid>
 </ContentPage>

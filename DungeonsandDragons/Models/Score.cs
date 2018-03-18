@@ -1,10 +1,14 @@
 ﻿using System;
+using SQLite;
+
 using System.Collections.Generic;
 using DungeonsandDragons.Models;
 namespace DungeonsandDragons.Models
+                            
 {
     public class Score
     {
+        [PrimaryKey]
         public string Id { get; set; }
 
         public string Name { get; set; }

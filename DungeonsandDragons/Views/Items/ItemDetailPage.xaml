@@ -18,7 +18,7 @@
                 <Label Text="Items Detail Page" FontSize="Large" />
             </StackLayout>
 
-            <Image Source="{Binding Item.ImageLink}"
+            <Image Source="{Binding Item.ImageURI}"
                 WidthRequest="150"
                 HeightRequest="150" 
                 HorizontalOptions="Center"
@@ -46,34 +46,25 @@
                     HorizontalOptions="Center"/>
             </StackLayout>
 
-            <StackLayout
-                Orientation="Horizontal"
-                HorizontalOptions="Start">
-                <Label Text="Strength : " 
-                   FontSize="Medium" 
-                   HorizontalOptions="Start"/>
-                <Label Text="{Binding Item.Strength}" 
-                    FontSize="Medium" 
-                    HorizontalOptions="Center"/>
-            </StackLayout>
+           
 
             <StackLayout
                 Orientation="Horizontal"
                 HorizontalOptions="Start">
-                <Label Text="Speed : " 
+                <Label Text="Attribute Type : " 
                    FontSize="Medium" 
                    HorizontalOptions="Start"/>
-                <Label Text="{Binding Item.Speed}" 
+                <Label Text="{Binding Item.Attribute}" 
                     FontSize="Medium" 
                     HorizontalOptions="Center"/>
             </StackLayout>
             <StackLayout
                 Orientation="Horizontal"
                 HorizontalOptions="Start">
-                <Label Text="Defense : " 
+                <Label Text="Value : " 
                    FontSize="Medium" 
                    HorizontalOptions="Start"/>
-                <Label Text="{Binding Item.Defense}" 
+                <Label Text="{Binding Item.Value}" 
                     FontSize="Medium" 
                     HorizontalOptions="Center"/>
             </StackLayout>

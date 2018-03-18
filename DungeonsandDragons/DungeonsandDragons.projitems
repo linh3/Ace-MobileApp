@@ -109,6 +109,16 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\AutoBattlePage.xaml.cs">
       <DependentUpon>AutoBattlePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controllers\ItemsController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\HttpClientService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\JsonHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\WebGlobals.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\VersionGlobals.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Converter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\AttributeEnum.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Entity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\BaseEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\SQLDataStore.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AboutPage.xaml" />
@@ -184,9 +194,9 @@
     <Folder Include="$(MSBuildThisFileDirectory)Views\Monsters\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\Heroes\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\Scores\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)Services\CloudDataStore.cs" />
-    <None Include="$(MSBuildThisFileDirectory)Services\SQLDataStore.cs" />
   </ItemGroup>
 </Project>

@@ -45,9 +45,19 @@ namespace DungeonsandDragons.Models
             foreach(Item item in Items)
             {
                 if(item != null){
-                    this.TotalSpeed += item.Speed;
-                    this.TotalDefense += item.Defense;
-                    this.TotalStength += item.Strength;
+                    if (item.Attribute == AttributeEnum.Speed)
+                    {
+                        this.TotalSpeed += item.Value;
+                    }
+                    else if (item.Attribute == AttributeEnum.Attack)
+                    {
+                        this.TotalStength += item.Value;
+                    }
+                    else if (item.Attribute == AttributeEnum.Defense)
+                    {
+                        this.TotalDefense += item.Value;
+
+                    }
                 }
             }
 

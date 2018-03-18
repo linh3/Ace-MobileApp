@@ -78,9 +78,18 @@ namespace DungeonsandDragons.Models
             this.TotalStength = this.Strength;
             if (SpecialItem != null)
             {
-                this.TotalSpeed += SpecialItem.Speed;
-                this.TotalDefense += SpecialItem.Defense;
-                this.TotalStength += SpecialItem.Strength;
+                if(SpecialItem.Attribute == AttributeEnum.Speed)
+                {
+                    this.TotalSpeed += SpecialItem.Value;    
+                }else if(SpecialItem.Attribute == AttributeEnum.Attack)
+                {
+                    this.TotalStength += SpecialItem.Value;
+                }
+                else if (SpecialItem.Attribute == AttributeEnum.Defense)
+                {
+                    this.TotalDefense += SpecialItem.Value;
+
+                }
             }
         
 

@@ -97,5 +97,9 @@ namespace DungeonsandDragons.ViewModels
             }
             return false;
         }
+        public void SetNeedsRefresh(bool value)
+        {
+            needsRefresh = value;
+        }
     }
 }

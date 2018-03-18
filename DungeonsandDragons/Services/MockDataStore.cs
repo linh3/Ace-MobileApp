@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Character = DungeonsandDragons.Models.Character;
 using DungeonsandDragons.Models;
+using DungeonsandDragons.Controllers;
 
 namespace DungeonsandDragons{
     public sealed class MockDataStore : IDataStore
@@ -33,13 +34,15 @@ namespace DungeonsandDragons{
         {
             var mockItems = new List<Item>
             {
-                new Item { Id = Guid.NewGuid().ToString(), Name = "First item", Description="This is 1 item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Name = "Second item", Description="This is 2 item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Name = "Third item", Description="This is 3 item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Name = "Fourth item", Description="This is 4 item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Name = "Fifth item", Description="This is 5 item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Name = "Sixth item", Description="This is 6 item description." },
+                //new Item { Id = Guid.NewGuid().ToString(), Name = "First item", Description="This is 1 item description." },
+                //new Item { Id = Guid.NewGuid().ToString(), Name = "Second item", Description="This is 2 item description." },
+                //new Item { Id = Guid.NewGuid().ToString(), Name = "Third item", Description="This is 3 item description." },
+                //new Item { Id = Guid.NewGuid().ToString(), Name = "Fourth item", Description="This is 4 item description." },
+                //new Item { Id = Guid.NewGuid().ToString(), Name = "Fifth item", Description="This is 5 item description." },
+                //new Item { Id = Guid.NewGuid().ToString(), Name = "Sixth item", Description="This is 6 item description." },
             };
+            ItemsController.Instance.GetItemsFromServer();
+
 
             foreach (var data in mockItems)
             {
@@ -97,6 +100,26 @@ namespace DungeonsandDragons{
 
         }
 
+
+        public async Task<bool> InsertUpdateAsync_Item(Item data)
+        {
+
+            // Check to see if the item exist
+            var oldData = _itemDataset.FirstOrDefault(arg => arg.Id == data.Id);
+            if (oldData == null)
+            {
+                // If it does not exist, add it to the DB
+                _itemDataset.Add(data);
+            }
+            else
+            {
+
+                // Compare it, if different update in the DB
+                oldData.Update(data);
+
+            }
+            return await Task.FromResult(true);
+        }
         // Item
         public async Task<bool> AddAsync_Item(Item data)
         {

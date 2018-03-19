@@ -10,8 +10,8 @@
         <StackLayout Spacing="20" Padding="15">
             <Label Text="Name" FontSize="Medium" />
             <Entry Text="{Binding Hero.Name}" FontSize="Small" />
-            <Label Text="ImageLink" FontSize="Medium" />
-            <Editor Text="{Binding Hero.ImageLink}" FontSize="Small" Margin="0" />
+            <!--<Label Text="ImageLink" FontSize="Medium" />
+            <Editor Text="{Binding Hero.ImageLink}" FontSize="Small" Margin="0" />-->
             <Label Text="Level" FontSize="Medium" />
             <Editor Text="{Binding Hero.Level}" FontSize="Small" Margin="0" />
             <Label Text="Strength:" FontSize="Medium" />

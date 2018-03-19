@@ -6,7 +6,7 @@
 
 	</ContentPage.ToolbarItems>
 	<ContentPage.Content>
-		<StackLayout Spacing="20" Padding="15">
+		<StackLayout Spacing="20" Padding="15" VerticalOptions="Start">
 			<Label Text="Name" FontSize="Medium" />
 			<Entry Text="{Binding Monster.Name}" FontSize="Small" />
 			<Label Text="ImageLink" FontSize="Medium" />

@@ -15,7 +15,7 @@ namespace DungeonsandDragons
             Monster = new Monster
             {
                 Name = "Monster name",
-                ImageLink = "This is an item description."
+                ImageLink = "https://www.clker.com/cliparts/6/6/e/d/15212509311695532986mon5.med.png"
             };
 
             BindingContext = this;

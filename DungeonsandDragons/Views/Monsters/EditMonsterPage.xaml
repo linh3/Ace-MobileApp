@@ -11,8 +11,8 @@
         <StackLayout Spacing="20" Padding="15">
             <Label Text="Name" FontSize="Medium" />
             <Entry Text="{Binding Monster.Name}" FontSize="Small" />
-            <Label Text="ImageLink" FontSize="Medium" />
-            <Editor Text="{Binding Monster.ImageLink}" FontSize="Small" Margin="0" />
+            <!--<Label Text="ImageLink" FontSize="Medium" />
+            <Editor Text="{Binding Monster.ImageLink}" FontSize="Small" Margin="0" />-->
             <Label Text="Level" FontSize="Medium" />
             <Editor Text="{Binding Monster.Level}" FontSize="Small" Margin="0" />
             <Label Text="Strength:" FontSize="Medium" />

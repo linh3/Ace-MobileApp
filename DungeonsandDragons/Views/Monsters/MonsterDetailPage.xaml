@@ -82,21 +82,5 @@
         </StackLayout>
     </ScrollView>
 
-    <!--<ContentPage.Content>
-        <ScrollView Orientation="Vertical" VerticalOptions="StartAndExpand">
-    <StackLayout Spacing="20" Padding="15">
-        <Label Text="{Binding Monster.Name}" FontSize="Medium" />
-        <Label Text="{Binding Monster.ImageLink}" FontSize="Small" />
-        
-        <Label Text="Level:" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
-        <Label Text="{Binding Monster.Level}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
-        <Label Text="Strength:" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
-        <Label Text="{Binding Monster.Strength}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
-        <Label Text="Defense:" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
-        <Label Text="{Binding Monster.Defense}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
-        <Label Text="Speed:" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
-        <Label Text="{Binding Monster.Speed}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
-        </StackLayout>
-            </ScrollView>
-        </ContentPage.Content>-->
+  
 </ContentPage>

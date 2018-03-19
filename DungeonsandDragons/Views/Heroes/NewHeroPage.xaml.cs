@@ -15,7 +15,7 @@ namespace DungeonsandDragons
             Hero = new Hero
             {
                 Name = "Hero name",
-                ImageLink = "This is an item description.",
+                ImageLink = "https://www.clker.com/cliparts/f/4/d/4/15212495851406653662imageedit_32_9581332802.med.png",
                 Level = 0,
                 Strength = 0,
                 Defense = 0,

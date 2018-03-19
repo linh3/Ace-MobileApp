@@ -8,7 +8,7 @@
     <ScrollView Orientation="Vertical" VerticalOptions="StartAndExpand">
     <StackLayout Spacing="20" Padding="15">
         <Label Text="{Binding Hero.Name}" FontSize="Medium" />
-        <Label Text="{Binding Hero.ImageLink}" FontSize="Small" />
+        <!--<Label Text="{Binding Hero.ImageLink}" FontSize="Small" />-->
         <Label Text="Level:" FontSize="Small" />
         <Label Text="{Binding Hero.Level}" FontSize="Small" />
         <Label Text="Strength:" FontSize="Small" />

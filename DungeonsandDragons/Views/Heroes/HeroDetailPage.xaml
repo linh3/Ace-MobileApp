@@ -105,22 +105,4 @@
     </ScrollView>
 
 
-
-    <!--<ContentPage.Content>
-        <ScrollView Orientation="Vertical" VerticalOptions="StartAndExpand">
-    <StackLayout Spacing="20" Padding="15">
-		<Label Text="{Binding Hero.Name}" FontSize="Medium" />
-		<Label Text="{Binding Hero.ImageLink}" FontSize="Small" />
-        --><!--<Label Text="{Binding Hero.Level}" FontSize="Small" />--><!--
-        <Label Text="Level:" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
-        <Label Text="{Binding Hero.Level}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
-        <Label Text="Strength:" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
-        <Label Text="{Binding Hero.Strength}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
-        <Label Text="Defense:" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
-        <Label Text="{Binding Hero.Defense}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
-        <Label Text="Speed:" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
-        <Label Text="{Binding Hero.Speed}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
-        </StackLayout>
-            </ScrollView>
-        </ContentPage.Content>-->
 </ContentPage>

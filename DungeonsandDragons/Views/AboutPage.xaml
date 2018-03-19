@@ -21,16 +21,39 @@
                     <Label.FormattedText>
                         <FormattedString>
                             <FormattedString.Spans>
-                                <Span Text="Dungeons and Dragons" FontAttributes="Bold" FontSize="22" />
+                                <Span Text="Dungeons and Dragons" FontAttributes="Bold" FontSize="24" />
                                 <Span Text=" " />
                                 <!--<Span Text="1.0" ForegroundColor="{StaticResource LightTextColor}" />-->
                             </FormattedString.Spans>
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
+                <Label 
+                    FontSize="Medium"
+                    Text="Server Items"
+                    HorizontalTextAlignment="Start"
+                    HorizontalOptions="Start"/>
+
+                <Button  
+                    Text="Get" 
+                    Clicked="GetItems_Command" 
+                    HorizontalOptions="Start"
+                    BackgroundColor="{StaticResource Primary}" TextColor="White"/>
+                <Label 
+                    FontSize="Medium"
+                    Text="Server Items Post"
+                    HorizontalTextAlignment="Start"
+                    HorizontalOptions="Start"/>
+
+                <Button  
+                    Text="Get" 
+                    Clicked="GetItemsPost_Command" 
+                    HorizontalOptions="Start"
+                    BackgroundColor="{StaticResource Primary}" TextColor="White" />
+
             </StackLayout>
-            <StackLayout
-                HorizontalOptions="FillAndExpand"
+            <!--<StackLayout
+                HorizontalOptions="Center"
                 Orientation="Horizontal">
 
                 <Label 
@@ -42,7 +65,7 @@
                 <Button  
                     Text="Get" 
                     Clicked="GetItems_Command" 
-                    HorizontalOptions="CenterAndExpand"
+                    HorizontalOptions="Start"
                     TextColor="Black" />
                                 <Label 
                     FontSize="Small"
@@ -53,9 +76,9 @@
                 <Button  
                     Text="Get" 
                     Clicked="GetItemsPost_Command" 
-                    HorizontalOptions="CenterAndExpand"
+                    HorizontalOptions="Start"
                     TextColor="Black" />
-            </StackLayout>
+            </StackLayout>-->
 
         </ScrollView>
     </Grid>

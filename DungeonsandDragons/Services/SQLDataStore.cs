@@ -308,12 +308,18 @@ namespace DungeonsandDragons.Services
 
         }
 
-        public async Task<IEnumerable<Monster>> GetAsync_MonsterParty(bool forceRefresh = false)
+        public async Task<IEnumerable<Monster>> GetAsync_MonsterParty(int level)
         {
             List<Monster> dataSet = new List<Monster>();
-            for (int i = 0; i < 5; i++)
+
+            for (int i = 0; i < 6; i++)
             {
-              //  dataSet.Add(new Monster(_monsterDataset[i]));
+                Random dic = new Random();
+              //  int index = dic.Next(0, _monsterDataset.Count - 1);
+               // var temp = new Monster(_monsterDataset[index]);
+                //temp.Level = level;
+//temp.updateCharacterAttributeValues();
+              //  dataSet.Add(new Monster(temp));
             }
             return await Task.FromResult(dataSet);
         }

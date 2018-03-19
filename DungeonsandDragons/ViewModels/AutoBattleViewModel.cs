@@ -50,7 +50,7 @@ namespace DungeonsandDragons.ViewModels
 
         public async void NextRound()
         {
-            List<Monster> NewMonsterDataSet = new List<Monster>(await DataStore.GetAsync_MonsterParty(true));
+            List<Monster> NewMonsterDataSet = new List<Monster>(await DataStore.GetAsync_MonsterParty(Battle.round + 1));
             nextPlayer = Battle.nextRound(NewMonsterDataSet);
             Defender = Battle.whoDefenseNext();
             needsRefresh = true;

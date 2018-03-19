@@ -33,7 +33,7 @@ namespace DungeonsandDragons
         Task<bool> DeleteAsync_Monster(Monster data);
         Task<Monster> GetAsync_Monster(string id);
         Task<IEnumerable<Monster>> GetAllAsync_Monster(bool forceRefresh = false);
-        Task<IEnumerable<Monster>> GetAsync_MonsterParty(bool forceRefresh = false);
+        Task<IEnumerable<Monster>> GetAsync_MonsterParty(int level);
 
         Task<bool> AddAsync_Score(Score data);
         Task<bool> UpdateAsync_Score(Score data);

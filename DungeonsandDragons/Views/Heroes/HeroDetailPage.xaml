@@ -60,10 +60,10 @@
             <StackLayout
                 Orientation="Horizontal"
                 HorizontalOptions="Start">
-                <Label Text="Defense : " 
+                <Label Text="Health : " 
                    FontSize="Medium" 
                    HorizontalOptions="Start"/>
-                <Label Text="{Binding Hero.Defense}" 
+                <Label Text="{Binding Hero.Health}" 
                     FontSize="Medium" 
                     HorizontalOptions="Center"/>
             </StackLayout>
@@ -75,6 +75,28 @@
                    FontSize="Medium" 
                    HorizontalOptions="Start"/>
                 <Label Text="{Binding Hero.Speed}" 
+                    FontSize="Medium" 
+                    HorizontalOptions="Center"/>
+            </StackLayout>
+            
+            <StackLayout
+                Orientation="Horizontal"
+                HorizontalOptions="Start">
+                <Label Text="Experience : " 
+                   FontSize="Medium" 
+                   HorizontalOptions="Start"/>
+                <Label Text="{Binding Hero.Experience}" 
+                    FontSize="Medium" 
+                    HorizontalOptions="Center"/>
+            </StackLayout>
+
+            <StackLayout
+                Orientation="Horizontal"
+                HorizontalOptions="Start">
+                <Label Text="isAlive : " 
+                   FontSize="Medium" 
+                   HorizontalOptions="Start"/>
+                <Label Text="{Binding Hero.isAlive}" 
                     FontSize="Medium" 
                     HorizontalOptions="Center"/>
             </StackLayout>

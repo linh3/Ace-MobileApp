@@ -20,6 +20,7 @@ namespace DungeonsandDragons.Models
             SpecialItem = null;
             updateCharacterAttributeValues();
             updateTotalAttributeValues();
+            isAlive = false;
         }
 
         public Monster(Monster rhs)

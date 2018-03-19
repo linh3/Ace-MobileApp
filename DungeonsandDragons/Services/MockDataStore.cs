@@ -51,12 +51,12 @@ namespace DungeonsandDragons{
 
             var mockHeroes = new List<Hero>
             {
-                new Hero { Id = Guid.NewGuid().ToString(), Name = "The Boss Baby", ImageLink="https://www.clker.com/cliparts/a/1/b/2/1521249390858993631imageedit_30_6056397475.med.png", Level = 2 , },
-                new Hero { Id = Guid.NewGuid().ToString(), Name = "Hulk Baby", ImageLink="https://www.clker.com/cliparts/f/4/d/4/15212495851406653662imageedit_32_9581332802.med.png" , Level = 2},
-                new Hero { Id = Guid.NewGuid().ToString(), Name = "Kiddo", ImageLink="https://www.clker.com/cliparts/6/1/8/0/15212496721626432074hero3.med.png" , Level = 1},
-                new Hero { Id = Guid.NewGuid().ToString(), Name = "The Spider Baby", ImageLink="https://www.clker.com/cliparts/2/7/7/9/15212497031821453567hero4.med.png" , Level = 2},
-                new Hero { Id = Guid.NewGuid().ToString(), Name = "Baby Bat", ImageLink="https://www.clker.com/cliparts/d/d/0/d/1521249730174335390hero5.med.png" , Level = 1 },
-                new Hero { Id = Guid.NewGuid().ToString(), Name = "The Baby Captain", ImageLink="https://www.clker.com/cliparts/a/6/4/d/1521249775910609355hero6.med.png" , Level = 2},
+                new Hero { Id = Guid.NewGuid().ToString(), Name = "The Boss Baby", ImageLink="https://www.clker.com/cliparts/a/1/b/2/1521249390858993631imageedit_30_6056397475.med.png", Level = 10 , },
+                new Hero { Id = Guid.NewGuid().ToString(), Name = "Hulk Baby", ImageLink="https://www.clker.com/cliparts/f/4/d/4/15212495851406653662imageedit_32_9581332802.med.png" , Level = 5},
+                new Hero { Id = Guid.NewGuid().ToString(), Name = "Kiddo", ImageLink="https://www.clker.com/cliparts/6/1/8/0/15212496721626432074hero3.med.png" , Level = 7},
+                new Hero { Id = Guid.NewGuid().ToString(), Name = "The Spider Baby", ImageLink="https://www.clker.com/cliparts/2/7/7/9/15212497031821453567hero4.med.png" , Level = 6},
+                new Hero { Id = Guid.NewGuid().ToString(), Name = "Baby Bat", ImageLink="https://www.clker.com/cliparts/d/d/0/d/1521249730174335390hero5.med.png" , Level = 3 },
+                new Hero { Id = Guid.NewGuid().ToString(), Name = "The Baby Captain", ImageLink="https://www.clker.com/cliparts/a/6/4/d/1521249775910609355hero6.med.png" , Level = 20},
             };
 
             foreach (var data in mockHeroes)
@@ -202,7 +202,7 @@ namespace DungeonsandDragons{
         public async Task<IEnumerable<Hero>> GetAsync_HeroParty(bool forceRefresh = false)
         {
             List<Hero> dataSet = new List<Hero>();
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 6; i++)
             {
                 dataSet.Add(new Hero(_heroDataset[i]));
             }
@@ -249,17 +249,34 @@ namespace DungeonsandDragons{
             return await Task.FromResult(_monsterDataset);
         }
 
-        public async Task<IEnumerable<Monster>> GetAsync_MonsterParty(bool forceRefresh = false)
+        public async Task<IEnumerable<Monster>> GetAsync_MonsterParty(int level)
         {
             List<Monster> dataSet = new List<Monster>();
-            for (int i = 0; i < 5; i++)
+            Random dic = new Random();
+            bool[] table = new bool[_monsterDataset.Count];
+            for (int i = 0; i < table.Length;i++){
+                table[i] = false;
+            }
+
+            for (int i = 0; i < 6; i++)
             {
-                dataSet.Add(new Monster(_monsterDataset[i]));
+                int index = dic.Next(0, _monsterDataset.Count);
+                while(table[index] == true){
+                    index = dic.Next(0, _monsterDataset.Count);
+                }
+                table[index] = true;
+
+                dataSet.Add(new Monster(_monsterDataset[index]));
+                dataSet[i].Level = level;
+                dataSet[i].updateCharacterAttributeValues();
+                index = dic.Next(0, _itemDataset.Count);
+
+                    dataSet[i].SpecialItem = new Item(_itemDataset[index]);
+                    dataSet[i].updateTotalAttributeValues();
             }
             return await Task.FromResult(dataSet);
         }
-
-
+    
         // Score
         public async Task<bool> AddAsync_Score(Score data)
         {

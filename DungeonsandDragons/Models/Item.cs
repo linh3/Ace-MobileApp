@@ -44,7 +44,21 @@ namespace DungeonsandDragons.Models
             Location = ItemLocationEnum.Unknown;
             Attribute = AttributeEnum.Unknown;
 
-            ImageURI = null;
+
+        }
+
+        public Item(Item item)
+        {
+            Name = item.Name;
+            Description = item.Description;
+            Guid = item.Guid;
+            ImageURI = item.ImageURI;
+
+            Range = item.Range;
+            Value = item.Value;
+
+            Location = item.Location;
+            Attribute = item.Attribute;
 
         }
 

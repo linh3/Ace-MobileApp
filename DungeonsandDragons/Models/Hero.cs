@@ -23,7 +23,7 @@ namespace DungeonsandDragons.Models
             Name = rhs.Name;
             ImageLink = rhs.ImageLink;
             Level = rhs.Level;
-            this.Items = new Item[(int)ItemLocation.MaxItemLocation];
+            this.Items = new Item[50];
             updateLevel();
             updateCharacterAttributeValues();
             updateTotalAttributeValues();

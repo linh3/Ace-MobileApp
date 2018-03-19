@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DungeonsandDragons.BattlePage" Title="{Binding Title}" BackgroundImage="background2in.jpg" x:Name="BattlePage">
-<!--    <ContentPage.ToolbarItems>
+    <!--    <ContentPage.ToolbarItems>
         <ToolbarItem Text="Exit" Clicked="Exit_Clicked" />
     </ContentPage.ToolbarItems>-->
     <ContentPage.Content>
@@ -9,65 +9,139 @@
                 <Label Text="{Binding Battle.round}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="16" />
                 <Label Text="Round" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="16" />
             </StackLayout>
-           <!-- <StackLayout Orientation="Horizontal" VerticalOptions="Start" Padding="10">-->
-                <!--<StackLayout HorizontalOptions="Center">-->
-                    <!--<Label Text="Heroes Party" LineBreakMode="NoWrap" HorizontalOptions="Center" Style="{DynamicResource ListItemTextStyle}" FontSize="16" />-->
-                <Grid BackgroundColor="{StaticResource Bckg}" ColumnSpacing="2" RowSpacing="5" Padding="10" HeightRequest="700">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Button Grid.Row="0" Grid.Column="0" x:Name="Cell00" BorderColor="Blue" BorderWidth="5" ></Button>
-                <Image Grid.Row="0" Grid.Column="0" Source="https://www.clker.com/cliparts/a/1/b/2/1521249390858993631imageedit_30_6056397475.med.png"></Image>
-                
-                <Button Grid.Row="0" Grid.Column="1" x:Name="Cell01" BorderColor="Blue" BorderWidth="5"></Button>
+            <!-- <StackLayout Orientation="Horizontal" VerticalOptions="Start" Padding="10">-->
+            <!--<StackLayout HorizontalOptions="Center">-->
+            <!--<Label Text="Heroes Party" LineBreakMode="NoWrap" HorizontalOptions="Center" Style="{DynamicResource ListItemTextStyle}" FontSize="16" />-->
+            <Grid BackgroundColor="{StaticResource Bckg}" ColumnSpacing="2" RowSpacing="5" Padding="10" HeightRequest="700">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*">
+                    </RowDefinition>
+                    <RowDefinition Height="*">
+                    </RowDefinition>
+                    <RowDefinition Height="*">
+                    </RowDefinition>
+                    <RowDefinition Height="*">
+                    </RowDefinition>
+                    <RowDefinition Height="*">
+                    </RowDefinition>
+                    <RowDefinition Height="*">
+                    </RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*">
+                    </ColumnDefinition>
+                    <ColumnDefinition Width="*">
+                    </ColumnDefinition>
+                    <ColumnDefinition Width="*">
+                    </ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Row="0" Grid.Column="0" x:Name="Cell00" BorderColor="Blue" BorderWidth="5">
+                </Button>
+                <Image x:Name="Hero1" ClassId="0" Grid.Row="0" Grid.Column="0" Source="{Binding Battle.Heroes[0].ImageLink}" IsVisible="{Binding Battle.Heroes[0].isAlive}" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnImageHeroTapped" NumberOfTapsRequired="1"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Button Grid.Row="0" Grid.Column="1" x:Name="Cell01" BorderColor="Blue" BorderWidth="5">
+                </Button>
                 <!--<Image Source="hero2.png"></Image>-->
-                <Button Grid.Row="0" Grid.Column="2" x:Name="Cell02" BorderColor="Blue" BorderWidth="5" ></Button>
-                <Image Grid.Row="0" Grid.Column="2" Source="https://www.clker.com/cliparts/b/1/b/c/15212499601676696766mon1.med.png"></Image>
-                <Button Grid.Row="1" Grid.Column="0" x:Name="Cell10" BorderColor="Blue" BorderWidth="5"></Button>
-                <Image Grid.Row="1" Grid.Column="0" Source="https://www.clker.com/cliparts/f/4/d/4/15212495851406653662imageedit_32_9581332802.med.png"></Image>
-                <Button Grid.Row="1" Grid.Column="1" x:Name="Cell11" BorderColor="Blue" BorderWidth="5"></Button>
+                <Button Grid.Row="0" Grid.Column="2" x:Name="Cell02" BorderColor="Blue" BorderWidth="5">
+                </Button>
+                <Image x:Name="Monster1" Grid.Row="0" Grid.Column="2" IsVisible="{Binding Battle.Monsters[0].isAlive}" Source="{Binding Battle.Monsters[0].ImageLink}" ClassId="0">
+                 <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnImageMonsterTapped" NumberOfTapsRequired="1"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Button Grid.Row="1" Grid.Column="0" x:Name="Cell10" BorderColor="Blue" BorderWidth="5">
+                </Button>
+                <Image x:Name="Hero2" ClassId="1" Grid.Row="1" Grid.Column="0" Source="{Binding Battle.Heroes[1].ImageLink}" IsVisible="{Binding Battle.Heroes[1].isAlive}">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnImageHeroTapped" NumberOfTapsRequired="1"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Button Grid.Row="1" Grid.Column="1" x:Name="Cell11" BorderColor="Blue" BorderWidth="5">
+                </Button>
                 <!--<Image Source="hero2.png"></Image>-->
-                <Button Grid.Row="1" Grid.Column="2" x:Name="Cell12" BorderColor="Blue" BorderWidth="5"></Button>
-                <Image Grid.Row="1" Grid.Column="2" Source="https://www.clker.com/cliparts/5/d/0/f/15212499871115384043mon2.med.png"></Image>
-                <Button Grid.Row="2" Grid.Column="0" x:Name="Cell20" BorderColor="Blue" BorderWidth="5"></Button>
-                <Image Grid.Row="2" Grid.Column="0" Source="https://www.clker.com/cliparts/6/1/8/0/15212496721626432074hero3.med.png"></Image>
-                <Button Grid.Row="2" Grid.Column="1" x:Name="Cell21" BorderColor="Blue" BorderWidth="5"></Button>
+                <Button Grid.Row="1" Grid.Column="2" x:Name="Cell12" BorderColor="Blue" BorderWidth="5">
+                </Button>
+                <Image x:Name="Monster2" Grid.Row="1" Grid.Column="2" Source="{Binding Battle.Monsters[1].ImageLink}" IsVisible="{Binding Battle.Monsters[1].isAlive}" ClassId="1">
+                <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnImageMonsterTapped" NumberOfTapsRequired="1"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Button Grid.Row="2" Grid.Column="0" x:Name="Cell20" BorderColor="Blue" BorderWidth="5">
+                </Button>
+                <Image x:Name="Hero3" ClassId="2" Grid.Row="2" Grid.Column="0" Source="{Binding Battle.Heroes[2].ImageLink}" IsVisible="{Binding Battle.Heroes[2].isAlive}" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnImageHeroTapped" NumberOfTapsRequired="1"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Button Grid.Row="2" Grid.Column="1" x:Name="Cell21" BorderColor="Blue" BorderWidth="5">
+                </Button>
                 <!--<Image Source="hero2.png"></Image>-->
-                <Button Grid.Row="2" Grid.Column="2" x:Name="Cell22" BorderColor="Blue" BorderWidth="5"></Button>
-                <Image Grid.Row="2" Grid.Column="2" Source="https://www.clker.com/cliparts/f/0/3/0/15212508761952413940mon3.med.png"></Image>
-                <Button Grid.Row="3" Grid.Column="0" x:Name="Cell30" BorderColor="Blue" BorderWidth="5"></Button>
-                <Image Grid.Row="3" Grid.Column="0" Source="https://www.clker.com/cliparts/2/7/7/9/15212497031821453567hero4.med.png"></Image>
-                <Button Grid.Row="3" Grid.Column="1" x:Name="Cell31" BorderColor="Blue" BorderWidth="5"></Button>
+                <Button Grid.Row="2" Grid.Column="2" x:Name="Cell22" BorderColor="Blue" BorderWidth="5">
+                </Button>
+                <Image x:Name="Monster3" Grid.Row="2" Grid.Column="2" Source="{Binding Battle.Monsters[2].ImageLink}" IsVisible="{Binding Battle.Monsters[2].isAlive}" ClassId="2">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnImageMonsterTapped" NumberOfTapsRequired="1"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Button Grid.Row="3" Grid.Column="0" x:Name="Cell30" BorderColor="Blue" BorderWidth="5">
+                </Button>
+                <Image x:Name="Hero4" Grid.Row="3" Grid.Column="0" Source="{Binding Battle.Heroes[3].ImageLink}" IsVisible="{Binding Battle.Heroes[3].isAlive}" ClassId="3">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnImageHeroTapped" NumberOfTapsRequired="1"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Button Grid.Row="3" Grid.Column="1" x:Name="Cell31" BorderColor="Blue" BorderWidth="5">
+                </Button>
                 <!--<Image Source="hero2.png"></Image>-->
-                <Button Grid.Row="3" Grid.Column="2" x:Name="Cell32" BorderColor="Blue" BorderWidth="5"></Button>
-                <Image Grid.Row="3" Grid.Column="2" Source="https://www.clker.com/cliparts/c/9/8/b/15212509041548435442mon4.med.png"></Image>
-                <Button Grid.Row="4" Grid.Column="0" x:Name="Cell40" BorderColor="Blue" BorderWidth="5"></Button>
-                <Image Grid.Row="4" Grid.Column="0" Source="https://www.clker.com/cliparts/d/d/0/d/1521249730174335390hero5.med.png"></Image>
-                <Button Grid.Row="4" Grid.Column="1" x:Name="Cell41" BorderColor="Blue" BorderWidth="5"></Button>
+                <Button Grid.Row="3" Grid.Column="2" x:Name="Cell32" BorderColor="Blue" BorderWidth="5">
+                </Button>
+                <Image x:Name="Monster4" Grid.Row="3" Grid.Column="2" Source="{Binding Battle.Monsters[3].ImageLink}" IsVisible="{Binding Battle.Monsters[3].isAlive}" ClassId="3">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnImageMonsterTapped" NumberOfTapsRequired="1"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Button Grid.Row="4" Grid.Column="0" x:Name="Cell40" BorderColor="Blue" BorderWidth="5">
+                </Button>
+                <Image x:Name="Hero5" Grid.Row="4" Grid.Column="0" Source="{Binding Battle.Heroes[4].ImageLink}" IsVisible="{Binding Battle.Heroes[4].isAlive}" ClassId="4">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnImageHeroTapped" NumberOfTapsRequired="1"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Button Grid.Row="4" Grid.Column="1" x:Name="Cell41" BorderColor="Blue" BorderWidth="5">
+                </Button>
                 <!--<Image Source="hero2.png"></Image>-->
-                <Button Grid.Row="4" Grid.Column="2" x:Name="Cell42" BorderColor="Blue" BorderWidth="5"></Button>
-                <Image Grid.Row="4" Grid.Column="2" Source="https://www.clker.com/cliparts/6/6/e/d/15212509311695532986mon5.med.png"></Image>
-                <Button Grid.Row="5" Grid.Column="0" x:Name="Cell50" BorderColor="Blue" BorderWidth="5"></Button>
-                <Image Grid.Row="5" Grid.Column="0" Source="https://www.clker.com/cliparts/a/6/4/d/1521249775910609355hero6.med.png"></Image>
-                <Button Grid.Row="5" Grid.Column="1" x:Name="Cell51" BorderColor="Blue" BorderWidth="5"></Button>
+                <Button Grid.Row="4" Grid.Column="2" x:Name="Cell42" BorderColor="Blue" BorderWidth="5">
+                </Button>
+                <Image x:Name="Monster5" Grid.Row="4" Grid.Column="2" Source="{Binding Battle.Monsters[4].ImageLink}" IsVisible="{Binding Battle.Monsters[4].isAlive}" ClassId="4">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnImageMonsterTapped" NumberOfTapsRequired="1"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Button Grid.Row="5" Grid.Column="0" x:Name="Cell50" BorderColor="Blue" BorderWidth="5">
+                </Button>
+                <Image x:Name="Hero6" Grid.Row="5" Grid.Column="0" Source="{Binding Battle.Heroes[5].ImageLink}" IsVisible="{Binding Battle.Heroes[5].isAlive}" ClassId="5">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnImageHeroTapped" NumberOfTapsRequired="1"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Button Grid.Row="5" Grid.Column="1" x:Name="Cell51" BorderColor="Blue" BorderWidth="5">
+                </Button>
                 <!--<Image Source="hero2.png"></Image>-->
-                <Button Grid.Row="5" Grid.Column="2" x:Name="Cell52" BorderColor="Blue" BorderWidth="5"></Button>
-                <Image Grid.Row="5" Grid.Column="2" Source="https://www.clker.com/cliparts/1/9/3/f/15212509571420675881mon6.med.png"></Image>
+                <Button Grid.Row="5" Grid.Column="2" x:Name="Cell52" BorderColor="Blue" BorderWidth="5">
+                </Button>
+                <Image x:Name="Monster6" Grid.Row="5" Grid.Column="2" Source="{Binding Battle.Monsters[5].ImageLink}" IsVisible="{Binding Battle.Monsters[5].isAlive}" ClassId="5">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnImageMonsterTapped" NumberOfTapsRequired="1"/>
+                    </Image.GestureRecognizers>
+                </Image>
                 <!--<ListView x:Name="HeroesListView" Grid.Row="0" Grid.Column="0" ItemsSource="{Binding Battle.Heroes}" VerticalOptions="Start" HasUnevenRows="true" RefreshCommand="{Binding LoadDataCommand}" IsPullToRefreshEnabled="false" IsRefreshing="{Binding IsBusy, Mode=OneWay}" CachingStrategy="RetainElement" SeparatorVisibility="Default">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>-->
-                                   <!-- <StackLayout Grid.Row="0" Grid.Column="0" Orientation="Vertical">
+                <!-- <StackLayout Grid.Row="0" Grid.Column="0" Orientation="Vertical">
                                         <StackLayout Grid.Row="0" Grid.Column="0" Padding="3">
                                             <Label Text="{Binding Name}" FontSize="16" HorizontalOptions="Center" />
                                             <Image Source="{Binding ImageLink}" HorizontalOptions="StartAndExpand"></Image>
@@ -80,7 +154,7 @@
                                                 <Label Text="Alive:" FontSize="10" HorizontalOptions="Start" />
                                                 <Label Text="{Binding isAlive}" FontSize="10" HorizontalOptions="Start" />
                                                 </StackLayout>-->
-                                            <!--<StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <!--<StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                                                 <Label Text="Lv:" FontSize="10" HorizontalOptions="Start" />
                                                 <Label Text="{Binding Level}" FontSize="10" HorizontalOptions="Start" />
                                                 <Label Text="Att:" FontSize="10" HorizontalOptions="Start" />
@@ -88,19 +162,19 @@
                                                 <Label Text="Exp:" FontSize="10" HorizontalOptions="Start" />
                                                 <Label Text="{Binding Experience}" FontSize="10" HorizontalOptions="Start" />
                                             </StackLayout>-->
-                                        <!--</StackLayout>
+                <!--</StackLayout>
                                     </StackLayout>-->
-                               <!-- </ViewCell>
+                <!-- </ViewCell>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>-->
-                    <!--<StackLayout Grid.Row="0" Grid.Column="1" Orientation="Vertical">
+                <!--<StackLayout Grid.Row="0" Grid.Column="1" Orientation="Vertical">
                         <Label Text=""></Label>
                     </StackLayout>-->
                 <!--</StackLayout>-->
                 <!--<StackLayout HorizontalOptions="Center">
                     <Label Text="Monster Party" LineBreakMode="NoWrap" HorizontalOptions="Center" Style="{DynamicResource ListItemTextStyle}" FontSize="16" />-->
-                    <!--<ListView x:Name="MonsterListView" Grid.Row="0" Grid.Column="2" ItemsSource="{Binding Battle.Monsters}" VerticalOptions="Start" HasUnevenRows="true" RefreshCommand="{Binding LoadDataCommand}" IsPullToRefreshEnabled="false" IsRefreshing="{Binding IsBusy, Mode=OneWay}" CachingStrategy="RetainElement" SeparatorVisibility="None">
+                <!--<ListView x:Name="MonsterListView" Grid.Row="0" Grid.Column="2" ItemsSource="{Binding Battle.Monsters}" VerticalOptions="Start" HasUnevenRows="true" RefreshCommand="{Binding LoadDataCommand}" IsPullToRefreshEnabled="false" IsRefreshing="{Binding IsBusy, Mode=OneWay}" CachingStrategy="RetainElement" SeparatorVisibility="None">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
@@ -116,7 +190,7 @@
                                                 <Label Text="Alive:" FontSize="10" HorizontalOptions="Start" />
                                                 <Label Text="{Binding isAlive}" FontSize="10" HorizontalOptions="Start" />
                                                 </StackLayout>-->
-                                            <!--<StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <!--<StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                                              <Label Text="Lv:" FontSize="10" HorizontalOptions="Start" />
                                                 <Label Text="{Binding Level}" FontSize="10" HorizontalOptions="Start" />
                                                 <Label Text="Att:" FontSize="10" HorizontalOptions="Start" />
@@ -124,17 +198,16 @@
                                                 <Label Text="Exp:" FontSize="10" HorizontalOptions="Start" />
                                                 <Label Text="{Binding Experience}" FontSize="10" HorizontalOptions="Start" />
                                             </StackLayout>-->
-                                       <!-- </StackLayout>
+                <!-- </StackLayout>
                                     </StackLayout>
                                 </ViewCell>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>-->
-
-                </Grid>
-             <Label Text="Message:" FontSize="16"/>
+            </Grid>
+            <Label Text="Message:" FontSize="16" />
             <StackLayout Padding="10" HeightRequest="60" Orientation="Horizontal" HorizontalOptions="Start">
-                <Label x:Name="TextField" FontSize="16" Text= ""/>
+                <Label x:Name="TextField" FontSize="16" Text="" />
             </StackLayout>
             <Button Margin="0,10,0,0" x:Name="BattleButton" Text="Battle" Clicked="BattleButtonClicked" BackgroundColor="{StaticResource Bckg}" TextColor="Black" />
         </StackLayout>

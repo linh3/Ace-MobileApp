@@ -43,12 +43,10 @@ namespace DungeonsandDragons.Models
 
         //determines the alive status of a character
         public bool isAlive { set; get; }
-<<<<<<< HEAD
          //initialize character attributes
-=======
+
 
         public string myType { set; get; } 
->>>>>>> b44e981... Update Battle
         public Character()
         {
             Name = "";

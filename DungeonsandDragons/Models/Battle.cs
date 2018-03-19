@@ -10,19 +10,13 @@ namespace DungeonsandDragons
         public List<Hero> Heroes { set; get; } // Holds list of the 6 heroes
         public List<Monster> Monsters { set; get; } // Holds list of the 6 monsters
         public Queue<Item> DroppedItems { set; get; } // keeps a track of dropped items
-<<<<<<< HEAD
         public int round { set; get; } //specifies number of rounds
         public int MonsterTurnNumber; //specifies monster turn
         public bool HeroesTurn; //specifies heroes turn
         public int HeroTurnNumber; //specifies heroes turn
-=======
-        public int round { set; get; }
-        public int MonsterTurnNumber;
-        public bool HeroesTurn;
-        public int HeroTurnNumber;
+
         public Queue<Character> OrderQ { set; get; }
 
->>>>>>> b44e981... Update Battle
 
         public Battle()
         {
@@ -251,12 +245,9 @@ namespace DungeonsandDragons
         // nextRound function will assign new monster with new special Items in Monsters array
         public Character nextRound(List<Monster> monsters)
         {
-<<<<<<< HEAD
-=======
             if(round > 0){
                 arrangeItems();
             }
->>>>>>> b44e981... Update Battle
             this.Monsters.Clear();
             foreach (Monster monster in monsters)
             {

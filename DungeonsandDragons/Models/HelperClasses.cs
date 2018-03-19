@@ -107,6 +107,7 @@ namespace DungeonsandDragons.Models
         }
     }
 
+    //structure of attributes of a character
     public struct Attributes
     {
         public int Speed;

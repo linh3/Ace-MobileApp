@@ -132,6 +132,7 @@ namespace DungeonsandDragons.Services
             return data;
         }
 
+        //post method
         public async Task<string> GetJsonPostAsync(string RestUrl, JObject jsonString)
         {
             // Take the post paramaters, and add the Version and Device to it
@@ -186,6 +187,7 @@ namespace DungeonsandDragons.Services
             return data;
         }
 
+        //get method
         public async Task<string> GetJsonGetAsync(string RestUrl)
         {
             // Take the post paramaters, and add the Version and Device to it

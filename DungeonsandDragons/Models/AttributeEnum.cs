@@ -5,8 +5,8 @@ using System.Linq;
 
 namespace DungeonsandDragons.Models
 {
-    // Enum to specify the different attributes allowd.
-    // Not spcified is considered not initialize and returns unknown
+    // Enum to specify the different attributes allowed.
+    // Not specified is considered not initialize and returns unknown
     // All other attributes have explicted values.
 
     public enum AttributeEnum

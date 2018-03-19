@@ -1,19 +1,19 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using DungeonsandDragons.Models;
 using System.Linq;
 namespace DungeonsandDragons
 {
+    //base class for Battle
     public class Battle
     {
         public List<Hero> Heroes { set; get; } // Holds list of the 6 heroes
         public List<Monster> Monsters { set; get; } // Holds list of the 6 monsters
         public Queue<Item> DroppedItems { set; get; } // keeps a track of dropped items
-        public int round { set; get; }
-        public int MonsterTurnNumber;
-        public bool HeroesTurn;
-        public int HeroTurnNumber;
-
+        public int round { set; get; } //specifies number of rounds
+        public int MonsterTurnNumber; //specifies monster turn
+        public bool HeroesTurn; //specifies heroes turn
+        public int HeroTurnNumber; //specifies heroes turn
 
         public Battle()
         {
@@ -32,17 +32,7 @@ namespace DungeonsandDragons
 
         }
 
-        //Initialize the which party will attack first base on highest speed
-        //Return true: batlte starts
-        //Return false: battle has started
-        //public bool startBattle()
-        //{
-            
-        //    return true;
-        //}
-
-
-        // Checking if all the moonsters are dead
+        // Checking if all the monsters are dead
         // return true if all the monsters are dead
         // return false if not
         public bool isAllMonstersDead()
@@ -73,15 +63,6 @@ namespace DungeonsandDragons
             }
             return AllDead;
         }
-
-
-        //Determine which party will attack, and do the attack
-        //Return 0: no party has die
-        //Return -1: monster party dies
-        //public int fight()
-        //{
-        //    return 1;
-        //}
 
 
         //Determine which party will attack, and do the attack
@@ -167,6 +148,7 @@ namespace DungeonsandDragons
             return next;
         }
 
+        //decides next hero/monster to attack
         public Character whoPlayNext()
         {
             this.HeroTurnNumber = this.HeroTurnNumber % 6;
@@ -190,12 +172,9 @@ namespace DungeonsandDragons
             }
         }
 
-        // nextRound function will assign new monster with new special Items in Monseters array
+        // nextRound function will assign new monster with new special Items in Monsters array
         public Character nextRound(List<Monster> monsters)
         {
-            //if(round > 0){
-            //    arrangeItems();
-            //}
             this.Monsters.Clear();
             foreach (Monster monster in monsters)
             {
@@ -214,6 +193,7 @@ namespace DungeonsandDragons
         {
             return true;
         }
+
 
         public void arrangeItems()
         {

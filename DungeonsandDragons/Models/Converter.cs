@@ -21,7 +21,7 @@ namespace DungeonsandDragons.Models
 
             return 0;
         }
-
+        //enum to int
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value is int)
@@ -54,6 +54,7 @@ namespace DungeonsandDragons.Models
             return 0;
         }
 
+        //enum to string
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value is int)

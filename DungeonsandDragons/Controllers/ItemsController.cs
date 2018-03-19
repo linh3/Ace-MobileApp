@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DungeonsandDragons.Controllers
 {
-
+    //base item controller class
     public class ItemsController
     {
         // Make this a singleton so it only exist one time because holds all the data records in memory
@@ -153,6 +153,7 @@ namespace DungeonsandDragons.Controllers
 
         }
 
+        //Convert to Item type from Json
         private Item ConvertFromJson(JObject json)
         {
             var myData = new Item();

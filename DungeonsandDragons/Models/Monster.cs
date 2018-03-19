@@ -6,6 +6,7 @@ namespace DungeonsandDragons.Models
         // contain the special item for monster to drop
         public Item SpecialItem { set; get; }
 
+        //initialize monster attributes
         public Monster()
         {
             Name = "";
@@ -61,6 +62,7 @@ namespace DungeonsandDragons.Models
             return this.SpecialItem;
         }
 
+        //update monster attributes
         override public void updateCharacterAttributeValues()
         {
             this.Strength = LevelAttributeChart.table[this.Level].Attack;
@@ -72,6 +74,7 @@ namespace DungeonsandDragons.Models
             this.Experience = LevelAttributeChart.table[this.Level].Experience;
         }
 
+        //update monster attribute
         public void updateTotalAttributeValues()
         {
             this.TotalSpeed = this.Speed;
@@ -108,6 +111,7 @@ namespace DungeonsandDragons.Models
             }
             return exp;
         }
+        // update imageLink
         public void Update(Monster data)
         {
             Name = data.Name;

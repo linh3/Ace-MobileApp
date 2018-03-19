@@ -98,22 +98,6 @@ namespace DungeonsandDragons.Services
 
                     // Time span looks like:
 
-                    /*
-                     *
-                            "Ticks": 0,
-                            "Days": 0,
-                            "Hours": 0,
-                            "Milliseconds": 0,
-                            "Minutes": 0,
-                            "Seconds": 0,
-                            "TotalDays": 0,
-                            "TotalHours": 0,
-                            "TotalMilliseconds": 0,
-                            "TotalMinutes": 0,
-                            "TotalSeconds": 0
-
-                     */
-
                     // Split on the comma seperator
                     // Then find the sub string with Ticks
                     // Then split on the :
@@ -234,6 +218,7 @@ namespace DungeonsandDragons.Services
             }
         }
 
+        // Takes a json object, and retrieves a string from it matching the field
         public static long GetJsonLong(JObject json, string field)
         {
             if (string.IsNullOrEmpty(field))
@@ -260,6 +245,7 @@ namespace DungeonsandDragons.Services
             }
         }
 
+        // Takes a json object, and retrieves a string from it matching the field
         public static ulong GetJsonuLong(JObject json, string field)
         {
             if (string.IsNullOrEmpty(field))

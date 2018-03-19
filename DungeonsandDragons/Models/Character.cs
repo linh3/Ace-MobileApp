@@ -4,41 +4,46 @@ using System.Collections.Generic;
 using SQLite;
 namespace DungeonsandDragons.Models
 {
-
+    //base class for character (hero and monster)
     public class Character
     {
+        // id is unique identifier of a character
         [PrimaryKey]
         public string Id { set; get; }
+
+        //The name is used to display the character to the user
         public string Name { set; get; }
-        //The name is used to display the character to the user 
+         //Use to display the image of this character to the user.
         public string ImageLink { set; get; }
-        //Use to display the image of this character to the user. 
+         //determines total strength of a character
         public int TotalStength { set; get; }
 
+        //determines total speed
         public int TotalSpeed { set; get; }
 
+        //determines total defense
         public int TotalDefense { set; get; }
 
+        // Represents the attack ability of current character.
         public int Strength{set; get;}
-        // Represents the attack ability of current character. 
-       // public int TotalStrength;
+         // Represents how fast the character plays
         public int Speed { set; get; }
-        // Represents how fast the character plays 
+         // Represents the maximum heath
         public int MaxHealth { set; get; }
-        // Represents the maximum heath 
-
+         
+        // Represents the current health
         public int Health { set; get; }
-        // Represents the current health 
-
+         
+        // Represents the current level
         public int Level { set; get; }
-        // Represents the current level 
+         // Represents the current experience points
         public int Experience { set; get; }
-        // Represents the current experience points 
+         // Represents the character’s ability to defend itself from attack
         public int Defense { set; get; }
-        // Represents the character’s ability to defend itself from attack
 
+        //determines the alive status of a character
         public bool isAlive { set; get; }
- 
+         //initialize character attributes
         public Character()
         {
             Name = "";
@@ -71,8 +76,6 @@ namespace DungeonsandDragons.Models
 
 
 
-
-
         // update the attribute Values with the AttributeChart for current level
         virtual public void updateCharacterAttributeValues()
         {
@@ -87,7 +90,6 @@ namespace DungeonsandDragons.Models
                 this.Experience = LevelAttributeChart.table[this.Level - 1].Experience;
             }
         }
-
 
     }
 }

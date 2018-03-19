@@ -6,6 +6,7 @@ namespace DungeonsandDragons.Models
         // contains all items for the character
         public Item[] Items { set; get; } 
 
+        //initialize hero attributes
         public Hero()
         {
             Name = "";
@@ -37,6 +38,7 @@ namespace DungeonsandDragons.Models
             updateLevel();
         }
 
+        //update attribute values
         public void updateTotalAttributeValues()
         {
             this.TotalSpeed = this.Speed;
@@ -124,6 +126,7 @@ namespace DungeonsandDragons.Models
             this.Health = this.MaxHealth;   
         }
 
+        //update imageLink
         public void Update(Hero data)
         {
             Name = data.Name;

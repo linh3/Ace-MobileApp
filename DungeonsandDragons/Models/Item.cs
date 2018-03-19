@@ -31,6 +31,7 @@ namespace DungeonsandDragons.Models
         // Description comes from the Entity class
         // ImageURI comes from the Entity class
 
+        //initialize item attributes
         public Item()
         {
             Name = "Unknown";

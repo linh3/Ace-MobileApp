@@ -30,6 +30,7 @@ namespace DungeonsandDragons{
         private List<Monster> _monsterDataset = new List<Monster>();
         private List<Score> _scoreDataset = new List<Score>();
 
+        //initialize data for all CRUDi pages
         public MockDataStore()
         {
             var mockItems = new List<Item>

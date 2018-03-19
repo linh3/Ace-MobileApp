@@ -4,15 +4,7 @@ using DungeonsandDragons.Models;
 
 namespace DungeonsandDragons
 {
-    //public interface IDataStore<T> where T : class
-    //{
-    //    Task<bool> AddAsync(T item);
-    //    Task<bool> UpdateAsync(T it em);
-    //    Task<bool> DeleteAsync(T item);
-    //    Task<T> GetAsync(string id);
-    //    Task<IEnumerable<T>> GetAllAsync(bool forceRefresh = false);
-    //}
-
+    //add, update, delete and get methods for items,heroes,monsters and scores
     public interface IDataStore
     {
         Task<bool> AddAsync_Item(Item data);

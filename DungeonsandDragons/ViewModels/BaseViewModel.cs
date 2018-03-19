@@ -10,7 +10,7 @@ namespace DungeonsandDragons.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-
+        //create datastores for mock and SQL each to manipulate DB
         private IDataStore DataStoreMock => DependencyService.Get<IDataStore>() ?? MockDataStore.Instance;
         private IDataStore DataStoreSql => DependencyService.Get<IDataStore>() ?? SQLDataStore.Instance;
 
@@ -23,6 +23,7 @@ namespace DungeonsandDragons.ViewModels
 
         public enum DataStoreEnum { Unknown = 0, Sql = 1, Mock = 2 }
 
+        //switch between mock and SQL
         public void SetDataStore(DataStoreEnum data)
         {
             switch (data)

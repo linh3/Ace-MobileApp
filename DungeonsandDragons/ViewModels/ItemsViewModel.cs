@@ -27,6 +27,7 @@ namespace DungeonsandDragons.ViewModels
             }
         }
 
+        //methods for add, edit and delete items
         public ItemsViewModel()
         {
             Title = "Item List";
@@ -88,6 +89,7 @@ namespace DungeonsandDragons.ViewModels
             }
         }
 
+        //refresh pages if true
         public bool NeedsRefresh()
         {
             if (needsRefresh)
@@ -97,6 +99,8 @@ namespace DungeonsandDragons.ViewModels
             }
             return false;
         }
+
+        //set refresh value as passed in argument
         public void SetNeedsRefresh(bool value)
         {
             needsRefresh = value;

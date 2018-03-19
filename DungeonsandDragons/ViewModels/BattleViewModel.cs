@@ -18,20 +18,6 @@ namespace DungeonsandDragons.ViewModels
         private bool needsRefresh;
         public Character nextPlayer { get; set; }
         public Character Defender { get; set; }
-        //private static BattleViewModel _instance;
-
-        //public static BattleViewModel Instance
-        //{
-        //    get
-        //    {
-        //        if (_instance == null)
-        //        {
-        //            _instance = new BattleViewModel();
-        //        }
-        //        return _instance;
-        //    }
-        //}
-
 
         public BattleViewModel()
         {
@@ -48,6 +34,7 @@ namespace DungeonsandDragons.ViewModels
 
         }
 
+        //function call for going to next round
         public async void NextRound()
         {
             List<Monster> NewMonsterDataSet = new List<Monster>(await DataStore.GetAsync_MonsterParty(Battle.round+1));
@@ -56,11 +43,13 @@ namespace DungeonsandDragons.ViewModels
             needsRefresh = true;
         }
 
+        //return true if all heroes dead and declare game over
         public bool isGameOver()
         {
             return Battle.isAllHeoresDead();   
         }
 
+        //function call for switching turns between heroes and monsters
         public void TakeTurn()
         {
             nextPlayer = Battle.takeTurn();
@@ -95,6 +84,7 @@ namespace DungeonsandDragons.ViewModels
             }
         }
 
+        //refreshes pages if true
         public bool NeedsRefresh()
         {
             if (needsRefresh)

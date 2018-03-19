@@ -73,6 +73,7 @@ namespace DungeonsandDragons.Services
             NotifyViewModelsOfDataChange();
         }
 
+        //initialize data for CRUDi pages
         private async void InitilizeSeedData()
         {
 
@@ -109,19 +110,14 @@ namespace DungeonsandDragons.Services
 
         // Item
 
-        // Add InsertUpdateAsync_Item Method
 
         // Check to see if the item exists
-                // Add your code here.
 
         // If it does not exist, then Insert it into the DB
-                // Add your code here.
                 // return true;
 
         // If it does exist, Update it into the DB
-                // Add your code here
                 // return true;
-
         // If you got to here then return false;
 
         public async Task<bool> InsertUpdateAsync_Item(Item data)

@@ -27,6 +27,7 @@ namespace DungeonsandDragons.ViewModels
             }
         }
 
+        //methods for add,edit and delete for monsters
         public MonstersViewModel()
         {
             Title = "Monster List";
@@ -84,6 +85,7 @@ namespace DungeonsandDragons.ViewModels
             }
         }
 
+        //refresh pages if true
         public bool NeedsRefresh()
         {
             if (needsRefresh)
@@ -93,6 +95,8 @@ namespace DungeonsandDragons.ViewModels
             }
             return false;
         }
+
+        //set refresh value as passed in argument
         public void SetNeedsRefresh(bool value)
         {
             needsRefresh = value;

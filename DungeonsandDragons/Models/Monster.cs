@@ -22,6 +22,7 @@ namespace DungeonsandDragons.Models
             updateCharacterAttributeValues();
             updateTotalAttributeValues();
             isAlive = false;
+            myType = "Monster";
         }
 
         public Monster(Monster rhs)
@@ -39,6 +40,7 @@ namespace DungeonsandDragons.Models
             SpecialItem = null;
             updateCharacterAttributeValues();
             updateTotalAttributeValues();
+            myType = "Monster";
         }
         // set the level for monster
         // update the attribute values base on the level

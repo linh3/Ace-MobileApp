@@ -16,6 +16,7 @@ namespace DungeonsandDragons.Models
             updateLevel();
             updateCharacterAttributeValues();
             updateTotalAttributeValues();
+            myType = "Hero";
         }
 
         public Hero(Hero rhs)
@@ -28,6 +29,7 @@ namespace DungeonsandDragons.Models
             updateLevel();
             updateCharacterAttributeValues();
             updateTotalAttributeValues();
+            myType = "Hero";
         }
 
         // Add experience points to the current hero

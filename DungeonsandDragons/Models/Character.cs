@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Data;
 using System.Collections.Generic;
 using SQLite;
@@ -43,7 +43,12 @@ namespace DungeonsandDragons.Models
 
         //determines the alive status of a character
         public bool isAlive { set; get; }
+<<<<<<< HEAD
          //initialize character attributes
+=======
+
+        public string myType { set; get; } 
+>>>>>>> b44e981... Update Battle
         public Character()
         {
             Name = "";
@@ -59,6 +64,25 @@ namespace DungeonsandDragons.Models
             TotalSpeed = 0;
             TotalDefense = 0;
             TotalStength = 0;
+        }
+
+        public Character(Character c)
+        {
+            Id = c.Id;
+            Name = c.Name;
+            ImageLink = c.ImageLink;
+            Strength = c.Strength;
+            Speed = c.Speed;
+            MaxHealth = c.MaxHealth;
+            Health = c.Health;
+            Level = c.Level;
+            Experience = c.Defense;
+            Defense = c.Defense;
+            isAlive = c.isAlive;
+            TotalSpeed = c.TotalSpeed;
+            TotalDefense = c.TotalDefense;
+            TotalStength = c.TotalStength;
+            myType = c.myType;
         }
 
 

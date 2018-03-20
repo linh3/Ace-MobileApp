@@ -8,7 +8,12 @@
     </ContentPage.ToolbarItems>
 
     <StackLayout Spacing="20" Padding="15" VerticalOptions="Start">
-        <Label Text="{Binding Score.Name}" FontSize="Medium" />
+        <Label Text="Game is Over!" FontSize = "Large" />
+         <Label Text="{Binding Score.Name}" FontSize="Medium" />
+        <StackLayout Orientation="Horizontal">
+            <Label Text="You have reached: " />
         <Label Text="{Binding Score.ScoreTotal}" FontSize="Small" />
+           <Label Text=" Round(s)" />
+            </StackLayout>
     </StackLayout>
 </ContentPage>

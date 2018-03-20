@@ -27,7 +27,7 @@ namespace DungeonsandDragons.ViewModels
             Battle = new Battle();
             LoadDataCommand = new Command(async () => await ExecuteLoadDataCommand());
 
-            MessagingCenter.Subscribe<AutoBattlePage, Score>(this, "AddData", async (obj, data) =>
+            MessagingCenter.Subscribe<GamePage, Score>(this, "AddData", async (obj, data) =>
             {
                 await DataStore.AddAsync_Score(data);
             });

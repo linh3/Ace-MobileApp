@@ -106,9 +106,6 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Models\ItemLocation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AutoBattleViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\AutoBattlePage.xaml.cs">
-      <DependentUpon>AutoBattlePage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\ItemsController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\HttpClientService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\JsonHelper.cs" />
@@ -181,10 +178,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Scores\DeleteScorePage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AutoBattlePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

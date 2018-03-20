@@ -264,7 +264,7 @@ namespace DungeonsandDragons
                 temp.Add(new Hero(hero));   
             }
 
-            List<Character> Sorted = temp.OrderByDescending(o => o.TotalSpeed).ToList();
+            List<Character> Sorted = temp.OrderByDescending(o => o.TotalSpeed).ThenByDescending(o => o.Level).ThenByDescending(o => o.Experience).ThenBy(o => o.myType.Length).ThenBy(o => o.Name).ToList();
             foreach (Character c in Sorted)
             {
                 OrderQ.Enqueue(new Character(c));

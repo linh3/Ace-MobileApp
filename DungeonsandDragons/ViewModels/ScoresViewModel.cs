@@ -33,14 +33,14 @@ namespace DungeonsandDragons.ViewModels
             Title = "Score List";
             Dataset = new ObservableCollection<Score>();
             LoadDataCommand = new Command(async () => await ExecuteLoadDataCommand());
-
+            //create record
             MessagingCenter.Subscribe<NewScorePage, Score>(this, "AddData", async (obj, data) =>
             {
                 Dataset.Add(data);
                 //await DataStore.AddItemAsync(_item);
                 await DataStore.AddAsync_Score(data);
             });
-
+            //edit record
             MessagingCenter.Subscribe<EditScorePage, Score>(this, "EditData", async (obj, data) => {
                 // Find the Item, then update it      
                 var myData = Dataset.FirstOrDefault(arg => arg.Id == data.Id);
@@ -53,7 +53,7 @@ namespace DungeonsandDragons.ViewModels
                 await DataStore.UpdateAsync_Score(myData);
                 needsRefresh = true;
             });
-
+            //delete record
             MessagingCenter.Subscribe<DeleteScorePage, Score>(this, "DeleteData", async (obj, data) =>
             {
                 Dataset.Remove(data);

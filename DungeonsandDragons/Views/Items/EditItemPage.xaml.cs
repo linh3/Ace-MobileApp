@@ -15,7 +15,7 @@ namespace DungeonsandDragons
         public Item Item { get; set; }
 
 
-        public EditItemPage(ItemDetailViewModel viewModel)
+        public EditItemPage(ItemDetailViewModel viewModel) //Constructors
         {
             Item = viewModel.Item;
             viewModel.Title = "Edit " + viewModel.Title;
@@ -25,7 +25,7 @@ namespace DungeonsandDragons
             BindingContext = this.viewModel = viewModel;
         }
 
-        async void Save_Clicked(object sender, EventArgs e)
+        async void Save_Clicked(object sender, EventArgs e) //Saves the updates 
         {
             MessagingCenter.Send(this, "EditData", Item);
             Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
@@ -35,7 +35,7 @@ namespace DungeonsandDragons
 
 
 
-        async void Cancel_Clicked(object sender, EventArgs e)
+        async void Cancel_Clicked(object sender, EventArgs e) //takes you back to list page
         {
             await Navigation.PopAsync();
         }

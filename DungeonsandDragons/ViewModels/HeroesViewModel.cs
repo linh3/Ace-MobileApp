@@ -33,14 +33,14 @@ namespace DungeonsandDragons.ViewModels
             Title = "Heroes List";
             Dataset = new ObservableCollection<Hero>();
             LoadDataCommand = new Command(async () => await ExecuteLoadDataCommand());
-
+            //Creating new record
             MessagingCenter.Subscribe<NewHeroPage, Hero>(this, "AddData", async (obj, data) =>
             {
                 Dataset.Add(data);
                 //await DataStore.AddItemAsync(_item);
                 await DataStore.AddAsync_Hero(data);
             });
-
+            //updating record
             MessagingCenter.Subscribe<EditHeroPage, Hero>(this, "EditData", async (obj, data) => {
                 // Find the Item, then update it      
                 var myData = Dataset.FirstOrDefault(arg => arg.Id == data.Id);              
@@ -53,7 +53,7 @@ namespace DungeonsandDragons.ViewModels
                 await DataStore.UpdateAsync_Hero(myData);
                 needsRefresh = true;
             });
-
+            //deleting record
             MessagingCenter.Subscribe<DeleteHeroPage, Hero>(this, "DeleteData", async (obj, data) =>             {                 Dataset.Remove(data);                 //await DataStore.DeleteAsync_Item(data);
                 await DataStore.DeleteAsync_Hero(data);
                 needsRefresh = true;             }); 

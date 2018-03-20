@@ -34,18 +34,18 @@ namespace DungeonsandDragons
             BindingContext = this.viewModel = viewModel;
         }
 
-        async void Edit_Clicked(object sender, EventArgs e)
+        async void Edit_Clicked(object sender, EventArgs e)  //takes you to monster edit page
         {
             await Navigation.PushAsync(new EditMonsterPage(this.viewModel));
         }
 
-        async void Cancel_Clicked(object sender, EventArgs e)
+        async void Cancel_Clicked(object sender, EventArgs e) //takes you back to monsterlist page
         {
             await Navigation.PopAsync();
 
         }
 
-        async void Delete_Clicked(object sender, EventArgs e) 
+        async void Delete_Clicked(object sender, EventArgs e) //takes you to monster delete page
         { 
             await Navigation.PushAsync(new DeleteMonsterPage(viewModel)); 
         }

@@ -25,13 +25,13 @@ namespace DungeonsandDragons
             BindingContext = this;
         }
 
-        async void Save_Clicked(object sender, EventArgs e)
+        async void Save_Clicked(object sender, EventArgs e) //Saves the new record created and goes back to list page
         {
             MessagingCenter.Send(this, "AddData", Hero);
             await Navigation.PopAsync();
         }
 
-        async void Cancel_Clicked(object sender, EventArgs e)
+        async void Cancel_Clicked(object sender, EventArgs e) //takes you back to list page without saving
         {
             await Navigation.PopAsync();
         }

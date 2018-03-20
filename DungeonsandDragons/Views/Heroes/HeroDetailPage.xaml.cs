@@ -31,25 +31,25 @@ namespace DungeonsandDragons
             BindingContext = viewModel;
         }
 
-        public HeroDetailPage(HeroDetailViewModel viewModel)
+        public HeroDetailPage(HeroDetailViewModel viewModel)   //Constructors
         {
             InitializeComponent();
 
             BindingContext = this.viewModel = viewModel;
         }
 
-        async void Edit_Clicked(object sender, EventArgs e)
+        async void Edit_Clicked(object sender, EventArgs e)  //Edit button that takes to EditHeropage
         {
             await Navigation.PushAsync(new EditHeroPage(this.viewModel));
         }
 
-        async void Cancel_Clicked(object sender, EventArgs e)
+        async void Cancel_Clicked(object sender, EventArgs e)  //Cancel Button that takes you back to list page
         {
             await Navigation.PopAsync();
 
         }
 
-        async void Delete_Clicked(object sender, EventArgs e) 
+        async void Delete_Clicked(object sender, EventArgs e) //Delete button takes you to deletehero page
         { 
             await Navigation.PushAsync(new DeleteHeroPage(viewModel)); 
         }

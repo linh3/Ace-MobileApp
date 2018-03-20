@@ -8,7 +8,7 @@ namespace DungeonsandDragons
     {
         public Item Item { get; set; }
 
-        public NewItemPage()
+        public NewItemPage() //constructor
         {
             InitializeComponent();
 
@@ -21,14 +21,14 @@ namespace DungeonsandDragons
             BindingContext = this;
         }
 
-        async void Save_Clicked(object sender, EventArgs e)
+        async void Save_Clicked(object sender, EventArgs e) //adds new record
         {
             MessagingCenter.Send(this, "AddData", Item);
             await Navigation.PopAsync();
         }
 
 
-        async void Cancel_Clicked(object sender, EventArgs e)
+        async void Cancel_Clicked(object sender, EventArgs e)  //takes you to Item list page without saving
         {
             await Navigation.PopAsync();
         }

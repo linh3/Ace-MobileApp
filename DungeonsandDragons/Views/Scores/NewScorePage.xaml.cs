@@ -8,7 +8,7 @@ namespace DungeonsandDragons
     {
         public Score Score { get; set; }
 
-        public NewScorePage()
+        public NewScorePage() //Constructor
         {
             InitializeComponent();
 
@@ -22,14 +22,14 @@ namespace DungeonsandDragons
         }
 
 
-        async void Save_Clicked(object sender, EventArgs e)
+        async void Save_Clicked(object sender, EventArgs e) //saves the new record
         {
             MessagingCenter.Send(this, "AddData", Score);
             await Navigation.PopAsync();
         }
 
 
-        async void Cancel_Clicked(object sender, EventArgs e)
+        async void Cancel_Clicked(object sender, EventArgs e) //takes you back to scorelist page withoutsaving
         {
             await Navigation.PopAsync();
         }

@@ -33,14 +33,14 @@ namespace DungeonsandDragons.ViewModels
             Title = "Monster List";
             Dataset = new ObservableCollection<Monster>();
             LoadDataCommand = new Command(async () => await ExecuteLoadDataCommand());
-
+            //Add new record
             MessagingCenter.Subscribe<NewMonsterPage, Monster>(this, "AddData", async (obj, data) =>
             {
                 Dataset.Add(data);
                 //await DataStore.AddItemAsync(_item);
                 await DataStore.AddAsync_Monster(data);
             });
-
+            //edit record
             MessagingCenter.Subscribe<EditMonsterPage, Monster>(this, "EditData", async (obj, data) => {
                 // Find the Item, then update it      
                 var myData = Dataset.FirstOrDefault(arg => arg.Id == data.Id);              
@@ -53,7 +53,7 @@ namespace DungeonsandDragons.ViewModels
                 await DataStore.UpdateAsync_Monster(myData);
                 needsRefresh = true;
             });
-
+            //delete record
             MessagingCenter.Subscribe<DeleteMonsterPage, Monster>(this, "DeleteData", async (obj, data) =>             {                 Dataset.Remove(data);                 //await DataStore.DeleteAsync_Item(data);
                 await DataStore.DeleteAsync_Monster(data);
                 needsRefresh = true;             }); 

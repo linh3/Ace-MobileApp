@@ -21,7 +21,7 @@ namespace DungeonsandDragons
             BindingContext = viewModel = MonstersViewModel.Instance;
         }
 
-        async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
+        async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)  //takes you to monsterdetail page when clicked
         {
             var monster = args.SelectedItem as Monster;
             if (monster == null)
@@ -33,7 +33,7 @@ namespace DungeonsandDragons
             ItemsListView.SelectedItem = null;
         }
 
-        async void AddItem_Clicked(object sender, EventArgs e)
+        async void AddItem_Clicked(object sender, EventArgs e)  //takes you to addmonster page
         {
             await Navigation.PushAsync(new NewMonsterPage());
         }

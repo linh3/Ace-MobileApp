@@ -36,18 +36,18 @@ namespace DungeonsandDragons
             BindingContext = this.viewModel = viewModel;
         }
 
-        async void Edit_Clicked(object sender, EventArgs e)
+        async void Edit_Clicked(object sender, EventArgs e)  //takes you to the editscore page
         {
             await Navigation.PushAsync(new EditScorePage(this.viewModel));
         }
 
-        async void Cancel_Clicked(object sender, EventArgs e)
+        async void Cancel_Clicked(object sender, EventArgs e) //takes you to the score list page
         {
             await Navigation.PopAsync();
 
         }
 
-        async void Delete_Clicked(object sender, EventArgs e)
+        async void Delete_Clicked(object sender, EventArgs e) //takes you to the delete score page
         {
             await Navigation.PushAsync(new DeleteScorePage(viewModel));
         }

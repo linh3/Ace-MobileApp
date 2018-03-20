@@ -31,21 +31,21 @@ namespace DungeonsandDragons
         {
             InitializeComponent();
 
-            BindingContext = this.viewModel = viewModel;
+            BindingContext = this.viewModel = viewModel;  // Set the data binding for the page
         }
 
-        async void Edit_Clicked(object sender, EventArgs e)
+        async void Edit_Clicked(object sender, EventArgs e)  //takes you to itemEdit page
         {
             await Navigation.PushAsync(new EditItemPage(this.viewModel));
         }
 
-        async void Cancel_Clicked(object sender, EventArgs e)
+        async void Cancel_Clicked(object sender, EventArgs e)  //takes you to Item list page
         {
             await Navigation.PopAsync();
 
         }
 
-        async void Delete_Clicked(object sender, EventArgs e)
+        async void Delete_Clicked(object sender, EventArgs e)  //takes you to itemdelete page
         {
             await Navigation.PushAsync(new DeleteItemPage(viewModel));
         }

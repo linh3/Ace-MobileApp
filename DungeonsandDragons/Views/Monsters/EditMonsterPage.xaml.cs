@@ -15,7 +15,7 @@ namespace DungeonsandDragons
         public Monster Monster { get; set; }
 
 
-        public EditMonsterPage(MonsterDetailViewModel viewModel)
+        public EditMonsterPage(MonsterDetailViewModel viewModel) //Constructor
         {
             Monster = viewModel.Monster;
             viewModel.Title = "Edit " + viewModel.Title;
@@ -25,7 +25,7 @@ namespace DungeonsandDragons
             BindingContext = this.viewModel = viewModel;
         }
 
-        async void Save_Clicked(object sender, EventArgs e)
+        async void Save_Clicked(object sender, EventArgs e)  //Saves the updated data
         {
             MessagingCenter.Send(this, "EditData", Monster);
             Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
@@ -35,7 +35,7 @@ namespace DungeonsandDragons
 
 
 
-        async void Cancel_Clicked(object sender, EventArgs e)
+        async void Cancel_Clicked(object sender, EventArgs e) //takes you back to monster list page without saving the changes
         {
             await Navigation.PopAsync();
         }

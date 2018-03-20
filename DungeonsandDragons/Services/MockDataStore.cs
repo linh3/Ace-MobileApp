@@ -86,12 +86,12 @@ namespace DungeonsandDragons{
 
             var mockScores = new List<Score>
             {
-                new Score { Id = Guid.NewGuid().ToString(), Name = "First Score", ScoreTotal = 111},
-                new Score { Id = Guid.NewGuid().ToString(), Name = "Second Score", ScoreTotal = 222},
-                new Score { Id = Guid.NewGuid().ToString(), Name = "Third Score", ScoreTotal = 333},
-                new Score { Id = Guid.NewGuid().ToString(), Name = "Fourth Score", ScoreTotal = 444},
-                new Score { Id = Guid.NewGuid().ToString(), Name = "Fifth Score", ScoreTotal = 555},
-                new Score { Id = Guid.NewGuid().ToString(), Name = "Sixth Score", ScoreTotal = 666},
+                new Score { Id = Guid.NewGuid().ToString(), Name = "First Score", ScoreTotal = 6},
+                new Score { Id = Guid.NewGuid().ToString(), Name = "Second Score", ScoreTotal = 2},
+                new Score { Id = Guid.NewGuid().ToString(), Name = "Third Score", ScoreTotal = 7},
+                new Score { Id = Guid.NewGuid().ToString(), Name = "Fourth Score", ScoreTotal = 3},
+                new Score { Id = Guid.NewGuid().ToString(), Name = "Fifth Score", ScoreTotal = 5},
+                new Score { Id = Guid.NewGuid().ToString(), Name = "Sixth Score", ScoreTotal = 2},
             };
 
             foreach (var data in mockScores)

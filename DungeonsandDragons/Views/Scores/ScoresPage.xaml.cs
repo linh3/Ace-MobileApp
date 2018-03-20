@@ -14,7 +14,7 @@ namespace DungeonsandDragons
     {
         ScoreViewModel viewModel;
 
-        public ScorePage()
+        public ScorePage() //Constructor
         {
             InitializeComponent();
 
@@ -23,7 +23,7 @@ namespace DungeonsandDragons
 
 
 
-        async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
+        async void OnItemSelected(object sender, SelectedItemChangedEventArgs args) // takes you to the score detail page when clicked
         {
             var score = args.SelectedItem as Score;
             if (score == null)
@@ -35,7 +35,7 @@ namespace DungeonsandDragons
             ItemsListView.SelectedItem = null;
         }
 
-        async void AddItem_Clicked(object sender, EventArgs e)
+        async void AddItem_Clicked(object sender, EventArgs e) //takes you to the add new score page
         {
             await Navigation.PushAsync(new NewScorePage());
         }

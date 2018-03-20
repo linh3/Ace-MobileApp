@@ -8,7 +8,7 @@ namespace DungeonsandDragons
     {
         public Monster Monster { get; set; }
 
-        public NewMonsterPage()
+        public NewMonsterPage() //Constructor
         {
             InitializeComponent();
 
@@ -21,14 +21,14 @@ namespace DungeonsandDragons
             BindingContext = this;
         }
 
-        async void Save_Clicked(object sender, EventArgs e)
+        async void Save_Clicked(object sender, EventArgs e) //Saves the rew record
         {
             MessagingCenter.Send(this, "AddData", Monster);
             await Navigation.PopAsync();
         }
 
 
-        async void Cancel_Clicked(object sender, EventArgs e)
+        async void Cancel_Clicked(object sender, EventArgs e) //takes you back to list page without saving
         {
             await Navigation.PopAsync();
         }

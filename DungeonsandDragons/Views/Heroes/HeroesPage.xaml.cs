@@ -14,14 +14,14 @@ namespace DungeonsandDragons
     {
         HeroesViewModel viewModel;
 
-        public HeroesPage()
+        public HeroesPage()   //Constructor
         {
             InitializeComponent();
 
             BindingContext = viewModel = HeroesViewModel.Instance;
         }
 
-        async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
+        async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)  //take to herodetail page when clicked on item
         {
             var hero = args.SelectedItem as Hero;
             if (hero == null)
@@ -33,13 +33,13 @@ namespace DungeonsandDragons
             ItemsListView.SelectedItem = null;
         }
 
-        async void AddItem_Clicked(object sender, EventArgs e)
+        async void AddItem_Clicked(object sender, EventArgs e)  //add button take you to addhero page
         {
             await Navigation.PushAsync(new NewHeroPage());
         }
 
 
-        protected override void OnAppearing()
+        protected override void OnAppearing()  //
         {
             base.OnAppearing();
             BindingContext = null;

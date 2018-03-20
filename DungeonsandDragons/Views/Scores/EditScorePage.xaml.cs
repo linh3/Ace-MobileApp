@@ -15,7 +15,7 @@ namespace DungeonsandDragons
         public Score Score { get; set; }
 
 
-        public EditScorePage(ScoreDetailViewModel viewModel)
+        public EditScorePage(ScoreDetailViewModel viewModel) //Constructor
         {
             Score = viewModel.Score;
             viewModel.Title = "Edit " + viewModel.Title;
@@ -27,7 +27,7 @@ namespace DungeonsandDragons
 
 
 
-        async void Save_Clicked(object sender, EventArgs e)
+        async void Save_Clicked(object sender, EventArgs e) //Saves the new updates
         {
             MessagingCenter.Send(this, "EditData", Score);
             Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
@@ -37,7 +37,7 @@ namespace DungeonsandDragons
 
 
 
-        async void Cancel_Clicked(object sender, EventArgs e)
+        async void Cancel_Clicked(object sender, EventArgs e) //takes you back to list page without saving
         {
             await Navigation.PopAsync();
         }

@@ -15,7 +15,7 @@ namespace DungeonsandDragons
         public Hero Hero { get; set; }
 
 
-        public EditHeroPage(HeroDetailViewModel viewModel)
+        public EditHeroPage(HeroDetailViewModel viewModel)   //Constructor
         {
             Hero = viewModel.Hero;
             viewModel.Title = "Edit " + viewModel.Title;
@@ -25,7 +25,7 @@ namespace DungeonsandDragons
             BindingContext = this.viewModel = viewModel;
         }
 
-        async void Save_Clicked(object sender, EventArgs e)
+        async void Save_Clicked(object sender, EventArgs e)      //Saves the updated data
         {
             MessagingCenter.Send(this, "EditData", Hero);
             Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
@@ -33,7 +33,7 @@ namespace DungeonsandDragons
             Navigation.RemovePage(this);
         }
 
-        async void Cancel_Clicked(object sender, EventArgs e)
+        async void Cancel_Clicked(object sender, EventArgs e)   //when canceled is clicked, goes back to list page
         {
             await Navigation.PopAsync();
         }

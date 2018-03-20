@@ -21,7 +21,7 @@ namespace DungeonsandDragons
             BindingContext = viewModel = ItemsViewModel.Instance;
         }
 
-        async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
+        async void OnItemSelected(object sender, SelectedItemChangedEventArgs args) //takes you to item detail page when item clicked
         {
             var item = args.SelectedItem as Item;
             if (item == null)
@@ -33,7 +33,7 @@ namespace DungeonsandDragons
             ItemsListView.SelectedItem = null;
         }
 
-        async void AddItem_Clicked(object sender, EventArgs e)
+        async void AddItem_Clicked(object sender, EventArgs e)  //takes you to additem page
         {
             await Navigation.PushAsync(new NewItemPage());
         }

@@ -14,7 +14,7 @@ namespace DungeonsandDragons
         // private MonsterDetailViewModel _viewModel;
         public Score score { get; set; }
 
-        public DeleteScorePage(ScoreDetailViewModel viewModel)
+        public DeleteScorePage(ScoreDetailViewModel viewModel) //Constructor
         {
             score = viewModel.Score;
             viewModel.Title = "Delete " + viewModel.Title;
@@ -22,7 +22,7 @@ namespace DungeonsandDragons
         }
 
 
-        async void Delete_Clicked(object sender, EventArgs e)
+        async void Delete_Clicked(object sender, EventArgs e)  //Deletes the record and takes you back to list page
         {
             MessagingCenter.Send(this, "DeleteData", score);
             Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
@@ -30,7 +30,7 @@ namespace DungeonsandDragons
         }
 
 
-        async void Cancel_Clicked(object sender, EventArgs e)
+        async void Cancel_Clicked(object sender, EventArgs e) //takes you back to list page without deleting
         {
             await Navigation.PopAsync();
         }

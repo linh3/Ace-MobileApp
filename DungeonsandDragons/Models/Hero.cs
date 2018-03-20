@@ -71,20 +71,25 @@ namespace DungeonsandDragons.Models
         // update all character attributes with new level.
         public void updateLevel()
         {
+            bool levelUp = false;
             bool finish = false;
             while(!finish)
             {
                 if (LevelAttributeChart.table[this.Level].Experience <= this.Experience)
                 {
                     this.Level++;
+                    levelUp = true;
                 }
                 else
                 {
                     finish = true;
                 }
             }
-            updateCharacterAttributeValues();
-            updateTotalAttributeValues();
+            if (levelUp)
+            {
+                updateCharacterAttributeValues();
+                updateTotalAttributeValues();
+            }
         }
 
 
